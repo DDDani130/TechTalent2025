@@ -1,13 +1,11 @@
 package UD05FlujoDatos;
-public class Ejercicio7 {
+public class Ejercicio08 {
 
 	public static void main(String[] args) {
-
-		int numero = 1;
-        while (numero <= 100) {
+		
+		for (int numero = 1; numero <= 100; numero++) {
             System.out.println(numero);
-            numero++;
-        } 
+        }
 	}
 
 }

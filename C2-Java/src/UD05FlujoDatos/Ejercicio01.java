@@ -1,6 +1,6 @@
 package UD05FlujoDatos;
 
-public class Ejercicio1 {
+public class Ejercicio01 {
 
 	public static void main(String[] args) {
 		int A=9;
