@@ -4,7 +4,7 @@ public class Ejercicio12 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-        String contrasenaCorrecta = "soledad";
+        String contrasenaCorrecta = "Java";
         int intentosRestantes = 3;
         boolean accesoConcedido = false;
         
