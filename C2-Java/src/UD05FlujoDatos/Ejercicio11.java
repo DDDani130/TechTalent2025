@@ -4,7 +4,7 @@ public class Ejercicio11 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Introduce un día de la semana en castellano: ");
+		System.out.print("Escribe un día de la semana en castellano: ");
         String dia = scanner.nextLine().toLowerCase();
         switch (dia) {
             case "lunes":
@@ -24,7 +24,7 @@ public class Ejercicio11 {
             case "sabado":
 				System.out.println("No es un día laboral. Te has dejado el acento.");
             default:
-                System.out.println("No es un día.");
+                System.out.println("Error.");
                 break;
         }
         
