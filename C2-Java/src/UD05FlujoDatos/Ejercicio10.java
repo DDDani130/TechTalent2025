@@ -9,8 +9,8 @@ public class Ejercicio10 {
         
         double sumaTotal = 0;
         
-        for (int i = 1; i <= numVentas; i++) {
-            System.out.print("Introduce el valor de la venta " + i + ": ");
+        for (int ventaX = 1; ventaX <= numVentas; ventaX++) {
+            System.out.print("Introduce el valor de la venta " + ventaX + ": ");
             double venta = scanner.nextDouble();
             sumaTotal += venta;
         }
