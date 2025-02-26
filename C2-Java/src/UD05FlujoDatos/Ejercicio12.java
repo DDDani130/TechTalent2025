@@ -18,7 +18,8 @@ public class Ejercicio12 {
             } else {
                 intentosRestantes--;
                 if (intentosRestantes > 0) {
-                    System.out.println("Contraseña incorrecta. Te quedan " + intentosRestantes + " intentos.");
+                    System.out.println("Contraseña incorrecta. Te quedan " 
+                                       + intentosRestantes + " intentos.");
                 } else {
                     System.out.println("Has agotado tus intentos. Acceso denegado.");
                 }
