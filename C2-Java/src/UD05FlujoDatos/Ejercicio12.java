@@ -8,23 +8,24 @@ public class Ejercicio12 {
         int intentosRestantes = 3;
         boolean accesoConcedido = false;
         
-        while (intentosRestantes > 0 && !accesoConcedido) {
-            System.out.print("Introduce la contraseña: ");
+        do {
+        	System.out.print("Introduce la contraseña: ");
             String contrasenaIngresada = scanner.nextLine();
             
             if (contrasenaIngresada.equals(contrasenaCorrecta)) {
-                System.out.println("Enhorabuena, acceso concedido.");
-                accesoConcedido = true;
-            } else {
-                intentosRestantes--;
-                if (intentosRestantes > 0) {
-                    System.out.println("Contraseña incorrecta. Te quedan " 
-                                       + intentosRestantes + " intentos.");
-                } else {
-                    System.out.println("Has agotado tus intentos. Acceso denegado.");
-                }
-            }
-        }
+              System.out.println("Enhorabuena, acceso concedido.");
+              accesoConcedido = true;
+          } else {
+              intentosRestantes--;
+              if (intentosRestantes > 0) {
+                  System.out.println("Contraseña incorrecta. Te quedan " 
+                                     + intentosRestantes + " intentos.");
+              } else {
+                  System.out.println("Has agotado tus intentos. Acceso denegado.");
+              }
+          }
+            
+        } while (intentosRestantes > 0 && accesoConcedido==false);
         
         scanner.close();
 	}
