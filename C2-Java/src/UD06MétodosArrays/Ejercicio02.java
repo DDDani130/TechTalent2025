@@ -13,7 +13,7 @@ public class Ejercicio02 {
             int numeroAleatorio = random.nextInt();
             System.out.println(numeroAleatorio);
             }
-            }
+        }
         public static int generarNumeroAleatorio(int limiteInferior, int limiteSuperior) {
             Random random = new Random();
             return random.nextInt((limiteSuperior - limiteInferior) + 1) + limiteInferior;
