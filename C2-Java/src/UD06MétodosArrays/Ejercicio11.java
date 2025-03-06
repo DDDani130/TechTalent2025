@@ -10,6 +10,7 @@ public class Ejercicio11 {
 		
         int array1 [] = new int[rangoArray1];
         int array2 [] = new int[rangoArray1];
+        int array3 [] = new int[rangoArray1];
         
         array1 =randomArray1(array1);
         System.out.println("Los valores del Array1 son: ");
@@ -17,12 +18,19 @@ public class Ejercicio11 {
             System.out.println(num);
         }
         
+        
         for (int i = 0; i < array1.length; i++) {
             array2[i] = array1[i];
         }
         array2 = randomArray2(array2);
         System.out.println("Los valores del Array2 son: ");
         for (int num : array2) {
+            System.out.println(num);
+        }
+        
+        array3 = array3Mult(array1, array2);
+        System.out.println("Los valores del Array3 son: ");
+        for (int num : array3) {
             System.out.println(num);
         }
         
@@ -44,4 +52,11 @@ public class Ejercicio11 {
         }
         return array;
     }
+	public static int[] array3Mult(int[] array1, int[] array2) {
+	    int[] resultArray = new int[array1.length];
+	    for (int i = 0; i < array1.length; i++) {
+	        resultArray[i] = array1[i] * array2[i];
+	    }
+	    return resultArray;
+	}
 }
