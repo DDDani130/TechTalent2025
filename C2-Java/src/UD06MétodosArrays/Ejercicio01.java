@@ -18,18 +18,18 @@ public class Ejercicio01 {
 					"El area del circulo es " + area);
 			break;
 		case "cuadrado":
-			double ladoC = Double.parseDouble(JOptionPane.showInputDialog(
+			double lado = Double.parseDouble(JOptionPane.showInputDialog(
 					"Introduce el lado: "));
-			double areaC = areaCuadrado(ladoC);
+			double areaC = areaCuadrado(lado);
 			JOptionPane.showInternalMessageDialog(null, 
 					"El area del cuadrado es " + areaC);
 			break;
 		case "triangulo":
 			double base = Double.parseDouble(JOptionPane.showInputDialog(
 					"Introduce la base: "));
-			double ladoT = Double.parseDouble(JOptionPane.showInputDialog(
-					"Introduce el lado: "));
-			double areaT = areaTriangulo(base, ladoT);
+			double altura = Double.parseDouble(JOptionPane.showInputDialog(
+					"Introduce la altura: "));
+			double areaT = areaTriangulo(base, altura);
 			JOptionPane.showInternalMessageDialog(null, 
 					"El area del triangulo es " + areaT);
 			break;
@@ -44,13 +44,13 @@ public class Ejercicio01 {
 		double area = Math.PI * Math.pow(radio, 2);
 	    BigDecimal bd = new BigDecimal(area).setScale(2, RoundingMode.HALF_UP);
 	    return bd.doubleValue();	}
-	public static double areaCuadrado(double ladoC) {
-		double areaC =  (ladoC * ladoC);
+	public static double areaCuadrado(double lado) {
+		double areaC =  (lado * lado);
 		BigDecimal bd = new BigDecimal(areaC).setScale(2, RoundingMode.HALF_UP);
 		return bd.doubleValue();
 	}
-	public static double areaTriangulo(double base, double ladoT) {
-		double areaT = (base * ladoT / 2);
+	public static double areaTriangulo(double base, double altura) {
+		double areaT = (base * altura / 2);
 		BigDecimal bd = new BigDecimal(areaT).setScale(2, RoundingMode.HALF_UP);
 		return bd.doubleValue();
 	}
