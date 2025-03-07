@@ -30,13 +30,14 @@ public class Ejercicio02 {
         return new int[]{limiteInferior, limiteSuperior};
     }
 
-    public static void generarNumerosAleatorios(int cantidad, 
+    public static int generarNumerosAleatorios(int cantidad, 
     		                                    int limiteInferior, int limiteSuperior) {
         Random random = new Random(); //Creamos un objeto Random entre 0 y el 1
         for (int i = 0; i < cantidad; i++) {
-            int numeroAleatorio = random
-            		.nextInt((limiteSuperior - limiteInferior) + 1) + limiteInferior;
-            System.out.println(numeroAleatorio);
+            int numerosAleatorios = random
+            		.nextInt(limiteInferior, limiteSuperior);
+            System.out.println(numerosAleatorios);           
         }
+		return cantidad;
 	}
 }

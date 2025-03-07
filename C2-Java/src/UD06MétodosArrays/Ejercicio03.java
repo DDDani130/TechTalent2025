@@ -14,8 +14,7 @@ public class Ejercicio03 {
             }
         }
         public static boolean esNumeroPrimo(int numero) {
-            if (numero <= 1) {
-                return false;
+            if (numero <= 1) {                
             }
             for (int i = 2; i <= Math.sqrt(numero); i++) {
                 if (numero % i == 0) {
