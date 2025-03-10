@@ -9,12 +9,17 @@ public class Ejercicio12 {
         int tamañoArray = scanner.nextInt();
         System.out.print("Introduce el final de los números: ");
         int ultimoDigito = scanner.nextInt();
-        
+        int tamaño2 = 0;
         int array1 [] = new int[tamañoArray];
+        int array2 [] = new int[tamaño2];
         
-        array1 = randomArray(array1);
+        array1 = randomArray(array1);      
         System.out.println("Los valores del Array1 son: ");
         printArray(array1);
+        
+        array2 = creacionArray2(array1, ultimoDigito);
+
+        
         scanner.close();
 	}
 	public static int[] randomArray(int[] array) {
@@ -32,14 +37,20 @@ public class Ejercicio12 {
 	        }
 	    }
 
-	    int[] array2 = new int[tamaño2];
+	    int[] array2 = new int[tamaño2]; //creamos un array con el tamaño adquirido antes
 	    int posicion = 0;
-	    for (int i : array) {
+	    for (int i : array) { //bucle en el que asignamos a cada hueco un valor seleccionado
 	        if (i % 10 == ultimoDigito) {
 	            array2[posicion++] = i;
 	        }
 	    }
-
+	    if ( tamaño2 > 0) {
+	        System.out.println("Los valores del Array2 son: ");
+	        printArray(array2);
+	        }
+	        else {
+	        	System.out.println("No hay valores para el Array2");
+	        }
 	    return array2;
 	}
 	
