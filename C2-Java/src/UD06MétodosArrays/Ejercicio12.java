@@ -7,19 +7,23 @@ public class Ejercicio12 {
 		Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce la extension del array: ");
         int tamañoArray = scanner.nextInt();
-        System.out.print("Introduce el final de los números: ");
-        int ultimoDigito = scanner.nextInt();
         int tamaño2 = 0;
         int array1 [] = new int[tamañoArray];
-        int array2 [] = new int[tamaño2];
         
         array1 = randomArray(array1);      
         System.out.println("Los valores del Array1 son: ");
         printArray(array1);
         
-        array2 = creacionArray2(array1, ultimoDigito);
-
+        int ultimoDigito;
+        do {
+            System.out.print("Introduce el final de los números (0-9): ");
+            ultimoDigito = scanner.nextInt();
+            if (ultimoDigito < 0 || ultimoDigito > 9) {
+                System.out.println("El número introducido no es válido.");
+            }
+        } while (ultimoDigito < 0 || ultimoDigito > 9);
         
+        int[] array2 = creacionArray2(array1, ultimoDigito);
         scanner.close();
 	}
 	public static int[] randomArray(int[] array) {
@@ -49,7 +53,7 @@ public class Ejercicio12 {
 	        printArray(array2);
 	        }
 	        else {
-	        	System.out.println("No hay valores para el Array2");
+	        	System.out.print("No hay valores para el Array2");
 	        }
 	    return array2;
 	}
