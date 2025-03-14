@@ -4,9 +4,9 @@ import javax.swing.JOptionPane;
 public class Ejercicio08 {
 
 	public static void main(String[] args) {
-		int[] numeros = new int[10];
-        rellenarValores(numeros);
-        mostrarValores(numeros);
+		int[] array = new int[10];
+        rellenarValores(array);
+        mostrarValores(array);
     }
 
     public static void rellenarValores(int[] array) {
@@ -21,5 +21,4 @@ public class Ejercicio08 {
             System.out.println("Índice " + i + ": " + array[i]);
         }
 	}
-
 }

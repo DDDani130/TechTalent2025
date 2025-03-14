@@ -7,19 +7,23 @@ public class Ejercicio10 {
 		String tamañoStr = JOptionPane.showInputDialog("Introduce el tamaño del array: ");
         int tamaño = Integer.parseInt(tamañoStr);
 
-        int[] numeros = new int[tamaño];
-        rellenarArrayConPrimos(numeros, 2, 100); // Example range: 2 to 100
-        mostrarArray(numeros);
-        int mayorPrimo = encontrarMayorPrimo(numeros);
+        int[] array = new int[tamaño];
+        rellenarArrayConPrimos(array);
+        mostrarArray(array);
+        int mayorPrimo = encontrarMayorPrimo(array);
         System.out.println("El mayor número primo en el array es: " + mayorPrimo);
     }
 
-    public static void rellenarArrayConPrimos(int[] array, int min, int max) {
+    public static void rellenarArrayConPrimos(int[] array) {
+    	String numMin = JOptionPane.showInputDialog("Introduce el tamaño min: ");
+        int min = Integer.parseInt(numMin);
+        String numMax = JOptionPane.showInputDialog("Introduce el tamaño max: ");
+        int max = Integer.parseInt(numMax);
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
             int num;
             do {
-                num = random.nextInt((max - min) + 1) + min;
+                num = random.nextInt(min, max);
             } while (!esPrimo(num));
             array[i] = num;
         }

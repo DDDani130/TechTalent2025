@@ -7,15 +7,15 @@ public class Ejercicio09 {
 		String tamañoStr = JOptionPane.showInputDialog("Introduce el tamaño del array: ");
         int tamaño = Integer.parseInt(tamañoStr);
 
-        int[] numeros = new int[tamaño];
-        rellenarArray(numeros, 0, 9);
-        mostrarArrayYSuma(numeros);
+        int[] array = new int[tamaño];
+        rellenarArray(array);
+        mostrarArrayYSuma(array);
     }
 
-    public static void rellenarArray(int[] array, int min, int max) {
+    public static void rellenarArray(int[] array) {
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt((max - min) + 1) + min;
+            array[i] = random.nextInt(9);
         }
     }
 
