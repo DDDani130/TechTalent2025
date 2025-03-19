@@ -20,53 +20,78 @@ public class Ejercicio03 {
         for (ProductosTienda producto : tienda) {
             System.out.println(producto);
         }
-        
+
         añadirProducto(tienda);
 
         for (ProductosTienda producto : tienda) {
             System.out.println(producto);
         }
     }
-	
-	public static void añadirProducto(ArrayList<ProductosTienda> tienda) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduce el nombre del nuevo producto: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Introduce la cantidad del nuevo producto: ");
-        int cantidad = scanner.nextInt();
-        System.out.print("Introduce el precio del nuevo producto: ");
-        double precio = scanner.nextDouble();
 
-        tienda.add(new ProductosTienda(nombre, cantidad, precio));
-        
+    public static void añadirProducto(ArrayList<ProductosTienda> tienda) {
+        Scanner scanner = new Scanner(System.in);
+        String nombre;
+        do {
+            System.out.print("Introduce un producto o 'Entregar' para terminar): ");
+            nombre = scanner.nextLine();
+            if (!nombre.equalsIgnoreCase("Entregar")) {
+                System.out.print("Introduce la cantidad del nuevo producto: ");
+                int cantidad = scanner.nextInt();
+                System.out.print("Introduce el precio del nuevo producto: ");
+                double precio = scanner.nextDouble();
+                scanner.nextLine();
+
+                tienda.add(new ProductosTienda(nombre, cantidad, precio));
+            }
+        } while (!nombre.equalsIgnoreCase("Entregar"));
         scanner.close();
     }
 }
 
 class ProductosTienda {
+	//Atributos
     private String nombre;
     private int cantidad;
     private double precio;
 
+    //Constructores
     public ProductosTienda(String nombre, int cantidad, double precio) {
         this.nombre = nombre;
         this.cantidad = cantidad;
         this.precio = precio;
     }
+    
+    //Métodos Getters y Setters
 
-    public String getNombre() {
-        return nombre;
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    public int getCantidad() {
-        return cantidad;
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    public double getPrecio() {
-        return precio;
-    }
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
+	//Métodos y sobrecarga de Métodos
 
     public String toString() {
         return nombre + " - Cantidad: " + cantidad + " - Precio: " + precio + "€";
     }
 }
+
+
