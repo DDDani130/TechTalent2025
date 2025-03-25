@@ -32,7 +32,7 @@ public class Ejercicio03 {
         Scanner scanner = new Scanner(System.in);
         String nombre;
         do {
-            System.out.print("Introduce un producto o 'Entregar' para terminar): ");
+            System.out.print("Introduce un producto o 'Entregar' para terminar: ");
             nombre = scanner.nextLine();
             if (!nombre.equalsIgnoreCase("Entregar")) {
                 System.out.print("Introduce la cantidad del nuevo producto: ");
