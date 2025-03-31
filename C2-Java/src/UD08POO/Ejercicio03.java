@@ -13,10 +13,10 @@ public class Ejercicio03 {
 			protected char consumoEnergetico;
 			protected double peso;
 			
-			private static final String color_Defecto = "blanco";
-			private static final char consumoEnergetico_Defecto = 'F';
-			private static final double precioBase_Defecto = 100;
-			private static final double peso_Defecto = 5;
+			private static final String COLOR_DEFECTO = "blanco";
+			private static final char CONSUMOENERGETICO_DEFECTO = 'F';
+			private static final double PRECIOBASE_DEFECTO = 100;
+			private static final double PESO_DEFECTO = 5;
 			
 			
 			public double getPrecioBase() {
@@ -52,16 +52,16 @@ public class Ejercicio03 {
 			
 			
 			public Electrodomestico() {
-				this.precioBase = precioBase_Defecto;
-				this.color = color_Defecto;
-				this.consumoEnergetico = consumoEnergetico_Defecto;
-				this.peso = peso_Defecto;
+				this.precioBase = PRECIOBASE_DEFECTO;
+				this.color = COLOR_DEFECTO;
+				this.consumoEnergetico = CONSUMOENERGETICO_DEFECTO;
+				this.peso = PESO_DEFECTO;
 			}
 			
 			public Electrodomestico(double precioBase, double peso) {
 				this.precioBase = precioBase;
-				this.color = color_Defecto;
-				this.consumoEnergetico = consumoEnergetico_Defecto;
+				this.color = COLOR_DEFECTO;
+				this.consumoEnergetico = CONSUMOENERGETICO_DEFECTO;
 				this.peso = peso;
 			}
 			
