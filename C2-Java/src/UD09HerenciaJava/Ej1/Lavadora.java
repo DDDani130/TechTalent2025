@@ -33,11 +33,11 @@ public class Lavadora extends Electrodomestico{
 		this.carga = CARGA_DEFECTO;
 	}
 	public Lavadora(double precioBase, String color, char consumoEnergetico, double peso, double carga) {
+		this.carga = comprobarCarga();
 		this.color = comprobarColor();
 		this.consumoEnergetico = comprobarConsumoEnergetico();
 		this.peso = comprobarPeso();
-		this.precioBase = precioFinal();
-		this.carga = comprobarCarga();
+		this.precioBase = precioFinal();	
 	}
 
 private double precioFinal() {
@@ -74,25 +74,26 @@ private double precioFinal() {
 	} else if (peso >= 80) {
 		precio += 100;
 	}
+	if (carga > 30) {
+		precio += 50;
+	}
 	return precio;
 }
 
 private double comprobarPeso() {
 	Scanner scanner = new Scanner(System.in);
-    double peso;
     System.out.print("Ingrese un peso entre 0 y 100: ");
     peso = scanner.nextDouble();
     scanner.close();
-    return peso;
+    return this.peso;
 }
 
 private char comprobarConsumoEnergetico() {
 	Scanner scanner = new Scanner(System.in);
-    char consumo;
     while (true) {
         System.out.print("Ingrese el consumo energético entre A y F: ");
-        consumo = scanner.nextLine().trim().toUpperCase().charAt(0);
-        switch (consumo) {
+        consumoEnergetico = scanner.nextLine().trim().toUpperCase().charAt(0);
+        switch (consumoEnergetico) {
             case 'A':
             case 'B':
             case 'C':
@@ -100,10 +101,10 @@ private char comprobarConsumoEnergetico() {
             case 'E':
             case 'F':                   
             default:
-                consumo ='F';
+            	consumoEnergetico ='F';
         }
         scanner.close();
-        return consumo;
+        return this.consumoEnergetico;
     }
 }
 
@@ -122,12 +123,23 @@ private String comprobarColor() {
                     color = "blanco";                   
             }
             scanner.close();
-            return color;
+            return this.color;
         }
 	}
 	private double comprobarCarga() {
-		
-		
-		return carga;		
+		int carga;
+		Scanner scanner = new Scanner(System.in);
+		while (true) {
+	        System.out.print("Ingrese una carga igual o superior a 5: ");
+	        carga = scanner.nextInt();
+	        if (carga >= 5) {
+	            this.carga = carga;
+	            break;
+	        } else {
+	            System.out.println("Carga no válida. Intente nuevamente.");
+	        }
+	    }
+		scanner.close();
+	    return this.carga;
 	}
 }
