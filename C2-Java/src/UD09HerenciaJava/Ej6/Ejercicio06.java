@@ -1,4 +1,4 @@
-package UD09HerenciaJava;
+package UD09HerenciaJava.Ej6;
 
 public class Ejercicio06 {
 
