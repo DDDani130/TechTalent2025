@@ -30,5 +30,11 @@ class Peliculas extends Cine {
 	public void setDirector(String director) {
 		this.director = director;
 	}
-
+	public void mostrarDatosPeli() {
+		System.out.println("Pelicula: " + nombrePeli);
+		System.out.println("Director: " + director);
+		System.out.println("Duracion: " + duracion + " minutos");
+		System.out.println("Edad minima: " + edadMinima + " años");
+		System.out.println("Precio: €" + precioEntrada);
+	}
 }
