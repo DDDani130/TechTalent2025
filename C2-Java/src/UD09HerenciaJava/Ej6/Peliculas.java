@@ -1,5 +1,7 @@
 package UD09HerenciaJava.Ej6;
 
+import java.util.Random;
+
 class Peliculas extends Cine {
 	
 	protected int duracion;
@@ -10,7 +12,18 @@ class Peliculas extends Cine {
         super(nombrePeli, precioEntrada);
         this.duracion = duracion;
         this.edadMinima = edadMinima;
-        this.director = director;		
+        this.director = director;
+	}     
+        protected Random randomPelicula() {
+            Random random = new Random();
+            String[] peli = mostrarPelicula();
+            boolean peliAsignada = true;
+            while (peli.length) {
+                random.nextInt(peli.length);
+                if (peliAsignada) {
+
+                }
+            }
 	}
 	public int getDuracion() {
 		return duracion;
