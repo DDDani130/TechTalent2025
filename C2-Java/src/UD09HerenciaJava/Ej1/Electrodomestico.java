@@ -57,23 +57,23 @@ public class Electrodomestico {
 	}
 
 	public Electrodomestico(double precioBase, double peso) {
-		this.precioBase = precioFinal();
+		this.precioBase = precioBase;
 		this.color = COLOR_DEFECTO;
 		this.consumoEnergetico = CONSUMOENERGETICO_DEFECTO;
-		this.peso = comprobarPeso();
+		this.peso = peso;
 	}
 
 	public Electrodomestico(double precioBase, String color, char consumoEnergetico, double peso) {
-		this.color = comprobarColor();
-		this.consumoEnergetico = comprobarConsumoEnergetico();
-		this.peso = comprobarPeso();
-		this.precioBase = precioFinal();
+		this.color = comprobarColorE();
+		this.consumoEnergetico = comprobarConsumoEnergeticoE();
+		this.peso = comprobarPesoE();
+		this.precioBase = precioFinalE();
 	}
 
-	private double precioFinal() {
+	private double precioFinalE() {
 		double precio = 0;
-		char consumoEnergetico = comprobarConsumoEnergetico();
-		double peso = comprobarPeso();
+		char consumoEnergetico = comprobarConsumoEnergeticoE();
+		double peso = comprobarPesoE();
 		switch(consumoEnergetico) {
 		case 'A':
 			precio += 100;
@@ -95,28 +95,28 @@ public class Electrodomestico {
             break;	
 		}
 		
-		if (peso >= 0 && peso < 20) {
-            precio += 10;
+		if (peso >= 80) {
+			precio += 100;
+		}else if (peso >= 50 && peso < 80) {
+			precio += 80;
 		} else if (peso >= 20 && peso < 50) {
 			precio += 50;
-		} else if (peso >= 50 && peso < 80) {
-			precio += 80;
-		} else if (peso >= 80) {
-			precio += 100;
+		}  else if (peso >= 5 && peso < 20) {
+            precio += 10;
 		}
 		return precio;
 	}
 
-	private double comprobarPeso() {
+	private double comprobarPesoE() {
 		Scanner scanner = new Scanner(System.in);
 	    double peso;
-	    System.out.print("Ingrese un peso entre 0 y 100: ");
+	    System.out.print("Ingrese un peso entre 5 y 100: ");
 	    peso = scanner.nextDouble();
 	    scanner.close();
 	    return peso;
 	}
 
-	private char comprobarConsumoEnergetico() {
+	private char comprobarConsumoEnergeticoE() {
 		Scanner scanner = new Scanner(System.in);
         char consumo;
         while (true) {
@@ -137,7 +137,7 @@ public class Electrodomestico {
         }
 	}
 
-	private String comprobarColor() {
+	private String comprobarColorE() {
 		 Scanner scanner = new Scanner(System.in);
 	        String color;
 	        while (true) {

@@ -48,20 +48,20 @@ public class Television extends Electrodomestico{
 			boolean sintonizadorTDT) {
 		this.resolucion = comprobarResolucion();
 		this.sintonizadorTDT = comprobarSintonizador();
-		this.color = comprobarColor();
-		this.consumoEnergetico = comprobarConsumoEnergetico();
-		this.peso = comprobarPeso();
-		this.precioBase = precioFinal();
+		this.color = comprobarColorT();
+		this.consumoEnergetico = comprobarConsumoEnergeticoT();
+		this.peso = comprobarPesoT();
+		this.precioBase = precioFinalT();
 
 	}
-	private double comprobarPeso() {
+	private double comprobarPesoT() {
 		Scanner scanner = new Scanner(System.in);
-	    System.out.print("Ingrese un peso entre 0 y 100: ");
+	    System.out.print("Ingrese un peso entre 5 y 100: ");
 	    peso = scanner.nextDouble();
 	    scanner.close();
 	    return this.peso;
 	}
-	private String comprobarColor() {
+	private String comprobarColorT() {
 		 Scanner scanner = new Scanner(System.in);
 	        String color;
 	        while (true) {
@@ -79,7 +79,7 @@ public class Television extends Electrodomestico{
 	            return this.color;
 	        }
 		}
-	private char comprobarConsumoEnergetico() {
+	private char comprobarConsumoEnergeticoT() {
 		Scanner scanner = new Scanner(System.in);
 	    while (true) {
 	        System.out.print("Ingrese el consumo energético entre A y F: ");
@@ -128,10 +128,10 @@ public class Television extends Electrodomestico{
 		scanner.close();
 		return sintonizadorTDT;
 	}
-	private double precioFinal() {
+	private double precioFinalT() {
 		double precio = 0;
-		char consumoEnergetico = comprobarConsumoEnergetico();
-		double peso = comprobarPeso();
+		char consumoEnergetico = comprobarConsumoEnergeticoT();
+		double peso = comprobarPesoT();
 		switch(consumoEnergetico) {
 		case 'A':
 			precio += 100;
@@ -153,14 +153,14 @@ public class Television extends Electrodomestico{
 	        break;	
 		}
 		
-		if (peso >= 0 && peso < 20) {
-	        precio += 10;
+		if (peso >= 80) {
+			precio += 100;
+		}else if (peso >= 50 && peso < 80) {
+			precio += 80;
 		} else if (peso >= 20 && peso < 50) {
 			precio += 50;
-		} else if (peso >= 50 && peso < 80) {
-			precio += 80;
-		} else if (peso >= 80) {
-			precio += 100;
+		}  else if (peso >= 5 && peso < 20) {
+            precio += 10;
 		}
 		if (sintonizadorTDT== true) {
 			precio += 50;

@@ -8,6 +8,7 @@ public class Ejercicio01 {
 		
 		Electrodomestico e1 = new Lavadora();
 		Electrodomestico e2 = new Television();
+		Electrodomestico e3 = new Electrodomestico();
 		
 	}
 	

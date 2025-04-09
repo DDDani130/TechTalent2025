@@ -34,16 +34,16 @@ public class Lavadora extends Electrodomestico{
 	}
 	public Lavadora(double precioBase, String color, char consumoEnergetico, double peso, double carga) {
 		this.carga = comprobarCarga();
-		this.color = comprobarColor();
-		this.consumoEnergetico = comprobarConsumoEnergetico();
-		this.peso = comprobarPeso();
-		this.precioBase = precioFinal();	
+		this.color = comprobarColorL();
+		this.consumoEnergetico = comprobarConsumoEnergeticoL();
+		this.peso = comprobarPesoL();
+		this.precioBase = precioFinalL();	
 	}
 
-private double precioFinal() {
+private double precioFinalL() {
 	double precio = 0;
-	char consumoEnergetico = comprobarConsumoEnergetico();
-	double peso = comprobarPeso();
+	char consumoEnergetico = comprobarConsumoEnergeticoL();
+	double peso = comprobarPesoL();
 	switch(consumoEnergetico) {
 	case 'A':
 		precio += 100;
@@ -65,14 +65,14 @@ private double precioFinal() {
         break;	
 	}
 	
-	if (peso >= 0 && peso < 20) {
-        precio += 10;
+	if (peso >= 80) {
+		precio += 100;
+	}else if (peso >= 50 && peso < 80) {
+		precio += 80;
 	} else if (peso >= 20 && peso < 50) {
 		precio += 50;
-	} else if (peso >= 50 && peso < 80) {
-		precio += 80;
-	} else if (peso >= 80) {
-		precio += 100;
+	}  else if (peso >= 5 && peso < 20) {
+        precio += 10;
 	}
 	if (carga > 30) {
 		precio += 50;
@@ -80,15 +80,15 @@ private double precioFinal() {
 	return precio;
 }
 
-private double comprobarPeso() {
+private double comprobarPesoL() {
 	Scanner scanner = new Scanner(System.in);
-    System.out.print("Ingrese un peso entre 0 y 100: ");
+    System.out.print("Ingrese un peso entre 5 y 100: ");
     peso = scanner.nextDouble();
     scanner.close();
     return this.peso;
 }
 
-private char comprobarConsumoEnergetico() {
+private char comprobarConsumoEnergeticoL() {
 	Scanner scanner = new Scanner(System.in);
     while (true) {
         System.out.print("Ingrese el consumo energético entre A y F: ");
@@ -108,7 +108,7 @@ private char comprobarConsumoEnergetico() {
     }
 }
 
-private String comprobarColor() {
+private String comprobarColorL() {
 	 Scanner scanner = new Scanner(System.in);
         String color;
         while (true) {
