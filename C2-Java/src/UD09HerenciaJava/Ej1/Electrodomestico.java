@@ -64,16 +64,14 @@ public class Electrodomestico {
 	}
 
 	public Electrodomestico(double precioBase, String color, char consumoEnergetico, double peso) {
-		this.color = comprobarColorE();
-		this.consumoEnergetico = comprobarConsumoEnergeticoE();
-		this.peso = comprobarPesoE();
+		this.color = color;
+		this.consumoEnergetico = consumoEnergetico;
+		this.peso = peso;
 		this.precioBase = precioFinalE();
 	}
 
 	double precioFinalE() {
 		double precio = 0;
-		char consumoEnergetico = comprobarConsumoEnergeticoE();
-		double peso = comprobarPesoE();
 		switch(consumoEnergetico) {
 		case 'A':
 			precio += 100;
@@ -107,52 +105,52 @@ public class Electrodomestico {
 		return precio;
 	}
 
-	private double comprobarPesoE() {
-		Scanner scanner = new Scanner(System.in);
-	    double peso;
-	    System.out.print("Ingrese un peso entre 5 y 100: ");
-	    peso = scanner.nextDouble();
-	    scanner.close();
-	    return peso;
-	}
-
-	private char comprobarConsumoEnergeticoE() {
-		Scanner scanner = new Scanner(System.in);
-        char consumo;
-        while (true) {
-            System.out.print("Ingrese el consumo energético entre A y F: ");
-            consumo = scanner.nextLine().trim().toUpperCase().charAt(0);
-            switch (consumo) {
-                case 'A':
-                case 'B':
-                case 'C':
-                case 'D':
-                case 'E':
-                case 'F':                   
-                default:
-                    consumo ='F';
-            }
-            scanner.close();
-            return consumo;
-        }
-	}
-
-	private String comprobarColorE() {
-		 Scanner scanner = new Scanner(System.in);
-	        String color;
-	        while (true) {
-	            System.out.print("Ingrese un color (blanco, negro, rojo, gris): ");
-	            color = scanner.nextLine().trim().toLowerCase();
-	            switch (color) {
-	                case "blanco":
-	                case "negro":
-	                case "rojo":
-	                case "gris":                   
-	                default:
-	                    color = "blanco";                   
-	            }
-	            scanner.close();
-	            return color;
-	        }
-	}
+//	private double comprobarPesoE() {
+//		Scanner scanner = new Scanner(System.in);
+//	    double peso;
+//	    System.out.print("Ingrese un peso entre 5 y 100: ");
+//	    peso = scanner.nextDouble();
+//	    scanner.close();
+//	    return peso;
+//	}
+//
+//	private char comprobarConsumoEnergeticoE() {
+//		Scanner scanner = new Scanner(System.in);
+//        char consumo;
+//        while (true) {
+//            System.out.print("Ingrese el consumo energético entre A y F: ");
+//            consumo = scanner.nextLine().trim().toUpperCase().charAt(0);
+//            switch (consumo) {
+//                case 'A':
+//                case 'B':
+//                case 'C':
+//                case 'D':
+//                case 'E':
+//                case 'F':                   
+//                default:
+//                    consumo ='F';
+//            }
+//            scanner.close();
+//            return consumo;
+//        }
+//	}
+//
+//	private String comprobarColorE() {
+//		 Scanner scanner = new Scanner(System.in);
+//	        String color;
+//	        while (true) {
+//	            System.out.print("Ingrese un color (blanco, negro, rojo, gris): ");
+//	            color = scanner.nextLine().trim().toLowerCase();
+//	            switch (color) {
+//	                case "blanco":
+//	                case "negro":
+//	                case "rojo":
+//	                case "gris":                   
+//	                default:
+//	                    color = "blanco";                   
+//	            }
+//	            scanner.close();
+//	            return color;
+//	        }
+//	}
 }

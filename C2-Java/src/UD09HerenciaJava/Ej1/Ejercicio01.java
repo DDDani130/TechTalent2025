@@ -6,11 +6,11 @@ public class Ejercicio01 {
 
 	public static void main(String[] args) {
 		
-		Electrodomestico L = new Lavadora();
-		Electrodomestico T = new Television();
-		Electrodomestico E = new Electrodomestico();
+//		Electrodomestico L = new Lavadora();
+//		Electrodomestico T = new Television();
+//		Electrodomestico E = new Electrodomestico();
 		
-		Electrodomestico[] electrodomesticos = new Electrodomestico[10];
+		Electrodomestico[] electrodomesticos = new Electrodomestico[4];
 		rellenarArray(electrodomesticos);
 		mostrarPrecio(electrodomesticos);
 	}
@@ -29,6 +29,15 @@ public class Ejercicio01 {
                     break;
                 case 2:
                     array[i] = new Television();
+                    break;
+                case 3:
+                    array[i] = new Electrodomestico(200, "blanca",'D', 8.5);
+                    break;
+                case 4:
+                    array[i] = new Lavadora(15, "blanca", 'A', 10, 5);
+                    break;
+                case 5:
+                    array[i] = new Television(30, "negra", 'B', 20, 40, true);
                     break;
             }
         }
