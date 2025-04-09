@@ -128,7 +128,7 @@ public class Television extends Electrodomestico{
 		scanner.close();
 		return sintonizadorTDT;
 	}
-	private double precioFinalT() {
+	double precioFinalT() {
 		double precio = 0;
 		char consumoEnergetico = comprobarConsumoEnergeticoT();
 		double peso = comprobarPesoT();

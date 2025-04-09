@@ -40,7 +40,7 @@ public class Lavadora extends Electrodomestico{
 		this.precioBase = precioFinalL();	
 	}
 
-private double precioFinalL() {
+double precioFinalL() {
 	double precio = 0;
 	char consumoEnergetico = comprobarConsumoEnergeticoL();
 	double peso = comprobarPesoL();

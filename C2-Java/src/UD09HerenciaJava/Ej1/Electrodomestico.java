@@ -70,7 +70,7 @@ public class Electrodomestico {
 		this.precioBase = precioFinalE();
 	}
 
-	private double precioFinalE() {
+	double precioFinalE() {
 		double precio = 0;
 		char consumoEnergetico = comprobarConsumoEnergeticoE();
 		double peso = comprobarPesoE();
