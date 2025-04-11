@@ -1,6 +1,5 @@
 package UD09HerenciaJava.Ej1;
 
-import java.util.Scanner;
 
 public class Electrodomestico {
 	protected double precioBase;

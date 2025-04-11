@@ -1,6 +1,5 @@
 package UD09HerenciaJava.Ej1;
 
-import java.util.Scanner;
 
 public class Television extends Electrodomestico{
 

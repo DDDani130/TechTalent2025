@@ -13,13 +13,14 @@ public class Ejercicio01 {
 		Electrodomestico[] electrodomesticos = new Electrodomestico[4];
 		rellenarArray(electrodomesticos);
 		mostrarPrecio(electrodomesticos);
+		precioTotal(electrodomesticos);
 	}
 	
 	public static void rellenarArray(Electrodomestico[] array) {
         Random random = new Random();
 
         for (int i = 0; i < array.length; i++) {
-            int randomType = random.nextInt(3);
+            int randomType = random.nextInt(5);
             switch (randomType) {
                 case 0:
                     array[i] = new Electrodomestico();
@@ -45,24 +46,38 @@ public class Ejercicio01 {
 	
 	public static void mostrarPrecio(Electrodomestico[] array) {
 		for (int i = 0; i < array.length; i++) {
-	        System.out.println("Position " + i + ":");
+	        System.out.println("Posicion " + i + ":");
 	        if (array[i] != null) {
 	            if (array[i] instanceof Lavadora) {
 	                Lavadora lavadora = (Lavadora) array[i];
 	                System.out.println("Lavadora: " + lavadora.precioFinalL());
-	                System.out.println(lavadora.toString());
 	            } else if (array[i] instanceof Television) {
 	                Television television = (Television) array[i];
 	                System.out.println("Television: " + television.precioFinalT());
-	                System.out.println(television.toString());
 	            } else if (array[i] instanceof Electrodomestico) {
 	                System.out.println("Electrodomestico: " + array[i].precioFinalE());
-	                System.out.println(array[i].toString());
 	            }
-	        } else {
-	            System.out.println("Empty position");
 	        }
-	        System.out.println("-------------------");
 	    }
+	}
+	
+	public static void precioTotal(Electrodomestico[] array) {
+	    double precioTotal = 0;
+
+	    for (Electrodomestico electrodomestico : array) {
+	        if (electrodomestico != null) {
+	            if (electrodomestico instanceof Lavadora) {
+	                Lavadora lavadora = (Lavadora) electrodomestico;
+	                precioTotal += lavadora.precioFinalL();
+	            } else if (electrodomestico instanceof Television) {
+	                Television television = (Television) electrodomestico;
+	                precioTotal += television.precioFinalT();
+	            } else {
+	                precioTotal += electrodomestico.precioFinalE();
+	            }
+	        }
+	    }
+
+	    System.out.println("El precio de todos los electrodomesticos: " + precioTotal);
 	}
 }
