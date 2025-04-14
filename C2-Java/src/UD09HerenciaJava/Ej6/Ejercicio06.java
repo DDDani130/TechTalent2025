@@ -10,41 +10,29 @@ public class Ejercicio06 {
 				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, peliOpcion, peliOpcion[0]);
 
 		switch (eleccion) {
-		case 0 : 
-			JOptionPane.showMessageDialog(null, "Has seleccionado: " + "1.Super Mario Bros. La película");
+		case 0 :
+			SubPeliculasUD09 peli1 = new SubPeliculasUD09("Super Mario Bros. La película", 12.99, 92, 7, "Aaron Horvath");
+			JOptionPane.showMessageDialog(null, "Has seleccionado: " + "Super Mario Bros. Dura " + peli1.getDuracionPeli() + " minutos y es para mayores de " + peli1.getEdadMinima() + " años. Coste de la entrada: " + peli1.precioEntrada + "€");
+			peli1.comprarEntrada(peli1.getEdadMinima(), peli1.precioEntrada);
 			break;
 		case 1 :
-			JOptionPane.showMessageDialog(null, "Has seleccionado: " + "2.Capitán América: Un nuevo mundo");
+			SubPeliculasUD09 peli2 = new SubPeliculasUD09("Capitán América: Un nuevo mundo", 12.99, 118, 12, "Julius Onah");
+			JOptionPane.showMessageDialog(null, "Has seleccionado: " + "Capitán América: Un nuevo mundo. Dura " + peli2.getDuracionPeli() + " minutos y es para mayores de " + peli2.getEdadMinima() + " años. Coste de la entrada: " + peli2.precioEntrada + "€");
+			peli2.comprarEntrada(peli2.getEdadMinima(), peli2.precioEntrada);
 			break;
 		case 2 : 
-			JOptionPane.showMessageDialog(null, "Has seleccionado: " + "3.Misión: Imposible 8");
+			SubPeliculasUD09 peli3 = new SubPeliculasUD09("Misión: Imposible 8", 12.99, 163, 12, "Christopher McQuarrie La película");
+			JOptionPane.showMessageDialog(null, "Has seleccionado: " + "Misión: Imposible 8. Dura " + peli3.getDuracionPeli() + " minutos y es para mayores de " + peli3.getEdadMinima() + " años. Coste de la entrada: " + peli3.precioEntrada + "€");
+			peli3.comprarEntrada(peli3.getEdadMinima(), peli3.precioEntrada);
 			break;
 			default: 
 				JOptionPane.showMessageDialog(null, "Nos has seleccionado una pelicula");
 				break;
 		}
 		
-		comprarEntrada(eleccion, eleccion);
+		
 		
 	}
-	
-	public static void comprarEntrada(int edadMinima, double precioEntrada) {
-        int edad = Integer.parseInt(JOptionPane.showInputDialog("Introduce tu edad:"));
-
-        if (edad < edadMinima) {
-            JOptionPane.showMessageDialog(null, "No puedes comprar la entrada. Edad mínima: " + edadMinima);
-        } else {
-            JOptionPane.showMessageDialog(null, "El precio de la entrada es: " + precioEntrada + "€");
-            double dineroPersona = Double.parseDouble(JOptionPane.showInputDialog("Introduce la cantidad de dinero que tienes:"));
-
-            if (dineroPersona < precioEntrada) {
-                JOptionPane.showMessageDialog(null, "Dinero insuficiente. Necesitas al menos: " + precioEntrada + "€");
-            } else {
-                double cambio = dineroPersona - precioEntrada;
-                JOptionPane.showMessageDialog(null, "Compra realizada con éxito. Tu cambio es: " + cambio + "€");
-            }
-        }
-    }
 	
 }
 

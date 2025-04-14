@@ -1,5 +1,6 @@
 package UD09HerenciaJava.Ej6;
 
+import javax.swing.JOptionPane;
 
 class SubPeliculasUD09 extends SuperClassCine {
 	
@@ -52,4 +53,23 @@ class SubPeliculasUD09 extends SuperClassCine {
 		System.out.println("Edad minima: " + edadMinima + " años");
 		System.out.println("Precio: €" + precioEntrada);
 	}
+	
+	public void comprarEntrada(int edadMinima, double precioEntrada) {
+        int edad = Integer.parseInt(JOptionPane.showInputDialog("Introduce tu edad:"));
+
+        if (edad < edadMinima) {
+            JOptionPane.showMessageDialog(null, "No puedes comprar la entrada. Edad mínima: " + edadMinima);
+        } else {
+            JOptionPane.showMessageDialog(null, "El precio de la entrada es: " + precioEntrada + "€");
+            double dineroPersona = Double.parseDouble(JOptionPane.showInputDialog("Introduce la cantidad de dinero que tienes:"));
+
+            if (dineroPersona < precioEntrada) {
+                JOptionPane.showMessageDialog(null, "Dinero insuficiente. Necesitas al menos: " + precioEntrada + "€");
+            } else {
+                double cambio = dineroPersona - precioEntrada;
+                JOptionPane.showMessageDialog(null, "Compra realizada con éxito. Tu cambio es: " + cambio + "€");
+            }
+        }
+    }
+	
 }
