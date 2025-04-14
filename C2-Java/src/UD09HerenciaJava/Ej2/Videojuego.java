@@ -1,6 +1,6 @@
 package UD09HerenciaJava.Ej2;
 
-public class Videojuego {
+public class Videojuego implements Entregable {
 	
 	protected String titulo;
 	protected int horasEstimadas;
@@ -67,8 +67,28 @@ public class Videojuego {
 	
 	@Override
 	public String toString() {
-		return "Videojuego [titulo=" + titulo + ", horasEstimadas=" + horasEstimadas + ", entregado=" + entregado
-				+ ", genero=" + genero + ", compañia=" + compañia + "]";
+		return "Título: " + titulo + ", horas estimadas: " + horasEstimadas + ", entregado: " + entregado
+				+ ", género: " + genero + ", compañía: " + compañia + ".";
+	}
+	@Override
+	public boolean entregar() {
+		entregado = true;
+		return true;
+	}
+	@Override
+	public boolean devolver() {
+		entregado = false;
+		return false;
+	}
+	@Override
+	public boolean isEntregado() {
+		// TODO Auto-generated method stub
+		return entregado;
+	}
+	@Override
+	public void compareTo(Object a) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -1,6 +1,6 @@
 package UD09HerenciaJava.Ej2;
 
-public class Serie {
+public class Serie implements Entregable {
 	
 	protected String titulo;
 	protected int temporadas;
@@ -66,8 +66,28 @@ public class Serie {
 	}
 	@Override
 	public String toString() {
-		return "Serie [titulo=" + titulo + ", temporadas=" + temporadas + ", entregado=" + entregado + ", genero="
-				+ genero + ", creador=" + creador + "]";
+		return "Título: " + titulo + ", temporadas: " + temporadas + ", entregada: " + entregado + ", género: "
+				+ genero + ", creador: " + creador + ".";
+	}
+	@Override
+	public boolean entregar() {
+		entregado = true;
+		return true;
+	}
+	@Override
+	public boolean devolver() {
+		entregado = false;
+		return false;
+	}
+	@Override
+	public boolean isEntregado() {
+		// TODO Auto-generated method stub
+		return entregado;
+	}
+	@Override
+	public void compareTo(Object a) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
