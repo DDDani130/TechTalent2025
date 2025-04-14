@@ -1,52 +1,54 @@
 package UD09HerenciaJava.Ej6;
 
-import java.util.Random;
 
-class Peliculas extends Cine {
+class SubPeliculasUD09 extends SuperClassCine {
 	
-	protected int duracion;
+	protected int duracionPeli;
 	protected int edadMinima;
-	protected String director;
+	protected String directorPeli;
 	
-	public Peliculas(String nombrePeli, double precioEntrada, int duracion, int edadMinima, String director) {
-        super(nombrePeli, precioEntrada);
-        this.duracion = duracion;
-        this.edadMinima = edadMinima;
-        this.director = director;
-	}     
-        protected Random randomPelicula() {
-            Random random = new Random();
-            String[] peli = mostrarPelicula();
-            boolean peliAsignada = true;
-            while (peli.length) {
-                random.nextInt(peli.length);
-                if (peliAsignada) {
-
-                }
-            }
+	
+	public SubPeliculasUD09(String nombrePeli, double precioEntrada, int duracionPeli, int edadMinima, String directorPeli) {
+		super(nombrePeli, precioEntrada);
+		this.duracionPeli = duracionPeli;
+		this.edadMinima = edadMinima;
+		this.directorPeli = directorPeli;
 	}
-	public int getDuracion() {
-		return duracion;
+	
+	public int getDuracionPeli() {
+		return duracionPeli;
 	}
-	public void setDuracion(int duracion) {
-		this.duracion = duracion;
+	
+	
+	public void setDuracionPeli(int duracionPeli) {
+		this.duracionPeli = duracionPeli;
 	}
+	
+	
 	public int getEdadMinima() {
 		return edadMinima;
 	}
+	
+	
 	public void setEdadMinima(int edadMinima) {
 		this.edadMinima = edadMinima;
 	}
-	public String getDirector() {
-		return director;
+	
+	
+	public String getDirectorPeli() {
+		return directorPeli;
 	}
-	public void setDirector(String director) {
-		this.director = director;
+	
+	
+	public void setDirectorPeli(String directorPeli) {
+		this.directorPeli = directorPeli;
 	}
+	
+	
 	public void mostrarDatosPeli() {
 		System.out.println("Pelicula: " + nombrePeli);
-		System.out.println("Director: " + director);
-		System.out.println("Duracion: " + duracion + " minutos");
+		System.out.println("Director: " + directorPeli);
+		System.out.println("Duracion: " + duracionPeli + " minutos");
 		System.out.println("Edad minima: " + edadMinima + " años");
 		System.out.println("Precio: €" + precioEntrada);
 	}
