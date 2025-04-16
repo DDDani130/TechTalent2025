@@ -45,15 +45,6 @@ class SubPeliculasUD09 extends SuperClassCine {
 		this.directorPeli = directorPeli;
 	}
 	
-	
-	public void mostrarDatosPeli() {
-		System.out.println("Pelicula: " + nombrePeli);
-		System.out.println("Director: " + directorPeli);
-		System.out.println("Duracion: " + duracionPeli + " minutos");
-		System.out.println("Edad minima: " + edadMinima + " años");
-		System.out.println("Precio: €" + precioEntrada);
-	}
-	
 	public void comprarEntrada(int edadMinima, double precioEntrada) {
         int edad = Integer.parseInt(JOptionPane.showInputDialog("Introduce tu edad:"));
 
