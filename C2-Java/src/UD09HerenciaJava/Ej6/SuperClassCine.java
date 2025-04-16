@@ -7,7 +7,6 @@ public class SuperClassCine {
 	protected String nombrePeli;
 	protected double precioEntrada;
 
-	protected String[] pelicula = mostrarPelicula();
 
 	private String[][] asientos;
 	private boolean[][] asientosOcupados;
@@ -58,15 +57,6 @@ public class SuperClassCine {
 		return asignado;
 	}
 
-	public String[] mostrarPelicula() {
-		String[] pelicula = {"1.Super Mario Bros. La película", "2.Capitán América: Un nuevo mundo", "3.Misión: Imposible 8"} ;
-		
-		System.out.println("Peliculas disponibles en el cine: " + pelicula);
-		for (String movie : pelicula) {
-			System.out.println("- " + pelicula);
-		}
-		return pelicula;
-	}
 
 	public String getNombrePeli() {
 		return nombrePeli;
