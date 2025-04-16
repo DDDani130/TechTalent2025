@@ -10,12 +10,13 @@ class SubPeliculasUD09 extends SuperClassCine {
 	
 	
 	public SubPeliculasUD09(String nombrePeli, double precioEntrada, int duracionPeli, int edadMinima, String directorPeli) {
-		super(nombrePeli, precioEntrada);
+		
+	super(nombrePeli, precioEntrada);
 		this.duracionPeli = duracionPeli;
 		this.edadMinima = edadMinima;
 		this.directorPeli = directorPeli;
 	}
-	
+
 	public int getDuracionPeli() {
 		return duracionPeli;
 	}
@@ -44,7 +45,6 @@ class SubPeliculasUD09 extends SuperClassCine {
 	public void setDirectorPeli(String directorPeli) {
 		this.directorPeli = directorPeli;
 	}
-	
 	public void comprarEntrada(int edadMinima, double precioEntrada) {
         int edad = Integer.parseInt(JOptionPane.showInputDialog("Introduce tu edad:"));
 
@@ -61,5 +61,6 @@ class SubPeliculasUD09 extends SuperClassCine {
                 JOptionPane.showMessageDialog(null, "Compra realizada con éxito. Tu cambio es: " + cambio + "€");
             }
         }
-    }	
+    }
+	
 }

@@ -7,7 +7,6 @@ public class SuperClassCine {
 	protected String nombrePeli;
 	protected double precioEntrada;
 
-
 	private String[][] asientos;
 	private boolean[][] asientosOcupados;
 
@@ -16,6 +15,31 @@ public class SuperClassCine {
 		this.precioEntrada = 12.99;
 	}
 
+	public String getNombrePeli() {
+		return nombrePeli;
+	}
+	public void setNombrePeli(String nombrePeli) {
+		this.nombrePeli = nombrePeli;
+	}
+	public double getPrecioEntrada() {
+		return precioEntrada;
+	}
+	public void setPrecioEntrada(double precioEntrada) {
+		this.precioEntrada = precioEntrada;
+	}
+	public String[][] getAsientos() {
+		return asientos;
+	}
+	public void setAsientos(String[][] asientos) {
+		this.asientos = asientos;
+	}
+	public boolean[][] getAsientosOcupados() {
+		return asientosOcupados;
+	}
+	public void setAsientosOcupados(boolean[][] asientosOcupados) {
+		this.asientosOcupados = asientosOcupados;
+	}
+	
 	public SuperClassCine() {
 		this.asientos = new String[8][9];
 		this.asientosOcupados = new boolean[8][9];
@@ -33,44 +57,48 @@ public class SuperClassCine {
 	}
 
 	public void mostrarAsientos() {
+		StringBuilder salaVisual = new StringBuilder("Asientos disponibles\n Los X estan ocupados\n");
 		for (int i = 0; i < asientos.length; i++) {
 			for (int j = 0; j < asientos[i].length; j++) {
-				System.out.println(asientos[i][j] + (asientosOcupados[i][j] ? "(O)" : "(X)") + " ");
+				salaVisual.append(asientos[i][j]).append(asientosOcupados[i][j] ? "(X)" : "(O)" + " ");
+			}
+			salaVisual.append("\n");
+		}
+		JOptionPane.showMessageDialog(null, salaVisual.toString());
+	}
+	public void elegirAsiento(SubEspectadorUD09 espectador) {
+		mostrarAsientos();
+		
+		String eleccion = JOptionPane.showInputDialog("Introduce el asiento deseado (Ejemplo: 5B):");
+		if (eleccion != null && marcarAsiento(eleccion)) {
+			JOptionPane.showMessageDialog(null, "Espectador " + espectador.nombrePersona + 
+					" asignado al asiento " + eleccion);
+		}else {
+			JOptionPane.showMessageDialog(null, "El asiento seleccionado no esta disponible");
+		}
+	}
+private boolean marcarAsiento(String asiento) {
+	for (int f = 0; f < asientos.length; f ++) {
+		for (int c = 0; c < asientos[f].length; c++) {
+			if (asientos[f][c].equals(asiento) && !asientosOcupados[f][c]) {
+				asientosOcupados[f][c] = true;
+				return true;
 			}
 		}
 	}
-
-	public boolean asignarAsiento(SubEspectadorUD09 espectador) {
+	return false;
+}
+	public void asignarAsientos() {
 		Random random = new Random();
-		boolean asignado = false;
+		int cantidadAsiento = random.nextInt(30) + 5;
 
-		while (!asignado) {
-			int fila = random.nextInt(8);
-			int columna = random.nextInt(9);
-			if (!asientosOcupados[fila][columna]) {
-				asientosOcupados[fila][columna] = true;
-				JOptionPane.showMessageDialog(null, "Espectador " + espectador.getNombrePersona()
-						+ " asignado el asiento " + asientos[fila][columna]);
-				asignado = true;
-			}
-		}
-		return asignado;
-	}
-
-
-	public String getNombrePeli() {
-		return nombrePeli;
-	}
-
-	public void setNombrePeli(String nombrePeli) {
-		this.nombrePeli = nombrePeli;
-	}
-
-	public double getPrecioEntrada() {
-		return precioEntrada;
-	}
-
-	public void setPrecioEntrada(double precioEntrada) {
-		this.precioEntrada = precioEntrada;
+		for (int i = 0; i < cantidadAsiento; i++) {
+			int fila, columna;
+			do {
+				 fila = random.nextInt(8);
+				 columna = random.nextInt(9);
+			} while (asientosOcupados[fila][columna]) ;
+			asientosOcupados[fila][columna] = true;
+		}	
 	}
 }
