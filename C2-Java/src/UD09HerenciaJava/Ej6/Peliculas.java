@@ -70,6 +70,5 @@ class SubPeliculasUD09 extends SuperClassCine {
                 JOptionPane.showMessageDialog(null, "Compra realizada con éxito. Tu cambio es: " + cambio + "€");
             }
         }
-    }
-	
+    }	
 }
