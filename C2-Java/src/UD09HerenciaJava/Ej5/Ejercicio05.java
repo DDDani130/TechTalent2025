@@ -20,5 +20,7 @@ public class Ejercicio05 {
 		profes[1] = new Profesores("Lucia", 35, 'F', "filosofia");
 		profes[2] = new Profesores("Miguel", 45, 'M', "fisica");
 
+        Aula aula = new Aula();
+        aula.habraClase(profes, estudiantes);
 	}
 }
