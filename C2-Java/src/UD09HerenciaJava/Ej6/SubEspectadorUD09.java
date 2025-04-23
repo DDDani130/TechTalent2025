@@ -1,5 +1,4 @@
 package UD09HerenciaJava.Ej6;
-import javax.swing.JOptionPane;
 
 public class SubEspectadorUD09 extends SuperClassCine {
 	protected String nombrePersona;
@@ -14,10 +13,31 @@ public class SubEspectadorUD09 extends SuperClassCine {
 		this.dineroPersona = dineroPersona;
 	}
 
-	public SubEspectadorUD09(String espectador) {
-		this.nombrePersona = JOptionPane.showInputDialog("Introduce tu nombre");
+	public SubEspectadorUD09(String nombrePersona) {
+		this.nombrePersona= nombrePersona;
+		// JOptionPane.showInputDialog("Ingresa el nombre del espectador: ");
 	}
+
 	
+		//return nombre;
+	//}
+//public void metodoPago() {
+//	double precioEntrada = 12.99;
+//	String metodo = JOptionPane.showInputDialog("¿Deseas pagar con tarjeta o en efectivo?");
+	// if (metodo.equalsIgnoreCase("tarjeta")) {
+	// JOptionPane.showMessageDialog(null, "El monto a pagar es de " +
+	// precioEntrada);
+	// }else if (metodo.equalsIgnoreCase("efectivo")) {
+	// double dinUsua = Double.parseDouble(JOptionPane.showInputDialog(dineroPersona
+	// + " ¿Cuanto dinero tienes?"));
+	// if (dinUsua = precioEntrada) {
+// JOptionPane.showMessageDialog(null, "Pago exitoso");
+//{else if (dinUsua > precioEntrada) {
+// double cambio = dinUsua - precioENtrada;
+// JOptionPane.showMessageDialog(null, "Pago exitoso, su cambio es de " + cambio);
+	// }
+
+//}
 	// @Override
 	public String getNombrePersona() {
 		return nombrePersona;
