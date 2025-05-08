@@ -7,3 +7,13 @@ CREATE TABLE IF NOT EXISTS clientes (
     correo VARCHAR(100) NOT NULL UNIQUE,
     telefono VARCHAR(15)
 );
+
+-- Inserto un valor para esta tabla clientes
+
+INSERT INTO clientes (nombre, correo, telefono) VALUES
+('Proveedor A', 'jsdjs@dshds,com', '123456789'),
+('Proveedor B', 'dsd@dsds.com', '987654321');
+
+--Actualiza los dos nombre de clientes a "Cliente A" y "Cliente B"
+UPDATE clientes SET nombre = 'Cliente A' WHERE id_cliente = 1;
+UPDATE clientes SET nombre = 'Cliente B' WHERE id_cliente = 2;
