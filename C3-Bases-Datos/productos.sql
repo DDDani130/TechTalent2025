@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS ccompraventas;
+USE ccompraventas;
+CREATE TABLE IF NOT EXISTS productos (
+    nombre VARCHAR(50) NOT NULL,
+    inventario INT NOT NULL,
+    N_serie INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
