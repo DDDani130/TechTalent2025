@@ -9,6 +9,5 @@ CREATE TABLE IF NOT EXISTS compras_ventas (
     N_factura_ventas INT NOT NULL,
     FOREIGN KEY (N_factura_ventas) REFERENCES facturas_ventas(N_factura),
     N_factura_compras INT NOT NULL,
-    FOREIGN KEY (N_factura_compras) REFERENCES facturas_compras(N_factura),
-
+    FOREIGN KEY (N_factura_compras) REFERENCES facturas_compras(N_factura)
 );
