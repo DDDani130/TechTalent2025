@@ -4,5 +4,6 @@ USE ccompraventas;
 CREATE TABLE IF NOT EXISTS facturas_compras (
     N_factura INT AUTO_INCREMENT PRIMARY KEY,
     fecha DATE NOT NULL,
-    DNI_proveedor VARCHAR(20) NOT NULL,
+    DNI_proveedor VARCHAR(20) NOT NULL
+    FOREIGN KEY (DNI_proveedor) REFERENCES proveedores(DNI_proveedor)
 );
