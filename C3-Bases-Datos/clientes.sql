@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS ccompraventas;
 USE ccompraventas;
 CREATE TABLE IF NOT EXISTS clientes (
-    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    DNI_cliente INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     correo VARCHAR(100) NOT NULL UNIQUE,
     telefono VARCHAR(15)
@@ -15,5 +15,5 @@ INSERT INTO clientes (nombre, correo, telefono) VALUES
 ('Proveedor B', 'dsd@dsds.com', '987654321');
 
 --Actualiza los dos nombre de clientes a "Cliente A" y "Cliente B"
-UPDATE clientes SET nombre = 'Cliente A' WHERE id_cliente = 1;
-UPDATE clientes SET nombre = 'Cliente B' WHERE id_cliente = 2;
+UPDATE clientes SET nombre = 'Cliente A' WHERE DNI_cliente = 1;
+UPDATE clientes SET nombre = 'Cliente B' WHERE DNI_cliente = 2;

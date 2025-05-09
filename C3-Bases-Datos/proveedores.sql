@@ -3,7 +3,7 @@
 CREATE DATABASE IF NOT EXISTS ccompraventas;
 USE ccompraventas;
 CREATE TABLE IF NOT EXISTS proveedores (
-    id_proveedor INT AUTO_INCREMENT PRIMARY KEY,
+    DNI_proveedor INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     correo VARCHAR(100) NOT NULL UNIQUE,
     telefono VARCHAR(15)
@@ -16,4 +16,4 @@ INSERT INTO proveedores (nombre, correo, telefono) VALUES
 ('Proveedor B', 'dsd@dsds.com', '987654321');
 
 -- ELimino un proveedor
-DELETE FROM proveedores WHERE `proveedores`.`id_proveedor` = 2
+DELETE FROM proveedores WHERE `proveedores`.`DNI_proveedor` = 2
