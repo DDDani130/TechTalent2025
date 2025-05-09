@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS clientes (
 INSERT INTO clientes (nombre, correo, telefono) VALUES
 ('Daniel', 'jsdjs@dshds,com', '123456789');
 ('Snaider', 'dsd@dsds.com', '987654321');
-('Alba', 'dsd@dsds.com', '987654321');
+('Alba', 'ljhd@dsds.com', '987654321');
 
 --Actualiza los dos nombre de clientes a "Cliente A" y "Cliente B"
 UPDATE clientes SET nombre = 'Cliente A' WHERE DNI_cliente = 1;
