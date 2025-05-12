@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS biblioteca;
+USE biblioteca;
+CREATE TABLE IF NOT EXISTS editorial (
+    clave_editorial SMALLINT PRIMARY KEY,
+    nombre VARCHAR(60) NOT NULL,
+    direccion VARCHAR(60) NOT NULL,
+    telefono VARCHAR(15) NOT NULL
+);

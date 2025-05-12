@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS biblioteca;
+USE biblioteca;
+CREATE TABLE IF NOT EXISTS escrito_por (
+    clave_libro INT NOT NULL,
+    FOREIGN KEY (clave_libro) REFERENCES libro(clave_libro),
+    clave_autor INT NOT NULL,
+    FOREIGN KEY (clave_autor) REFERENCES autor(clave_autor)
+);

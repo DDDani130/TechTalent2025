@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS biblioteca;
+USE biblioteca;
+CREATE TABLE IF NOT EXISTS autor (
+    clave_autor INT PRIMARY KEY,
+    nombre VARCHAR(60) NOT NULL
+);

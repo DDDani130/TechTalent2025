@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS biblioteca;
+USE biblioteca;
+CREATE TABLE IF NOT EXISTS prestamo (
+    clave_socio INT NOT NULL,
+    FOREIGN KEY (clave_socio) REFERENCES socio(clave_socio),
+    clave_ejemplar INT NOT NULL,
+    FOREIGN KEY (clave_ejemplar) REFERENCES ejemplar(clave_ejemplar),
+    num_orden SMALLINT NOT NULL,
+    fecha_prestamo DATE NOT NULL,
+    fecha_devolucion DATE NOT NULL,
+    notas BLOB NULL
+);

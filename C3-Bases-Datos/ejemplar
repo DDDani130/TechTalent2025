@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS biblioteca;
+USE biblioteca;
+CREATE TABLE IF NOT EXISTS ejemplar (
+    clave_ejemplar INT PRIMARY KEY,
+    clave_libro INT NOT NULL,
+    FOREIGN KEY (clave_libro) REFERENCES libro(clave_libro),
+    num_orden SMALLINT NOT NULL,
+    edicion SMALLINT NOT NULL,
+    ubiacion VARCHAR(15) NOT NULL,
+    categoria VARCHAR(15) NOT NULL
+);

@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS biblioteca;
+USE biblioteca;
+CREATE TABLE IF NOT EXISTS libro (
+    clave_libro INT PRIMARY KEY,
+    titulo VARCHAR(60) NOT NULL,
+    idioma VARCHAR(15) NOT NULL,
+    formato VARCHAR(15) NOT NULL,
+    clave_editorial SMALLINT NOT NULL,
+    FOREIGN KEY (clave_editorial) REFERENCES editorial(clave_editorial)
+);
