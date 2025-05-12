@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS estaciónmeteo;
+USE estaciónmeteo;
+CREATE TABLE IF NOT EXISTS clientes (
+    identificador VARCHAR(20) AUTO_INCREMENT PRIMARY KEY,
+    latitud DECIMAL(9,6) NOT NULL,
+    longitud DECIMAL(9,6) NOT NULL,
+    altitud DECIMAL(5,2) NOT NULL
+);
