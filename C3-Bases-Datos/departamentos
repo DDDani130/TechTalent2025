@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS trabajo;
+USE trabajo;
+CREATE TABLE IF NOT EXISTS departamentos (
+    codigo INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    presupuesto INT NOT NULL
+);
