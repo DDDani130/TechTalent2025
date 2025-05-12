@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS los_directores;
+USE los_directores;
+CREATE TABLE IF NOT EXISTS directores (
+    DNI VARCHAR(8) PRIMARY KEY,
+    nom_apels VARCHAR(255) NOT NULL,
+    DNI_jefe VARCHAR(8),
+    FOREIGN KEY (DNI_jefe) REFERENCES directores(DNI),
+    despacho INT NOT NULL,
+    FOREIGN KEY (despacho) REFERENCES despachos(numero)
+);

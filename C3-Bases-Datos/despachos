@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS los_directores;
+USE los_directores;
+CREATE TABLE IF NOT EXISTS despachos (
+    numero INT PRIMARY KEY,
+    capacidad INT NOT NULL
+);
