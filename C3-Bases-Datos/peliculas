@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS cine;
+USE cine;
+CREATE TABLE IF NOT EXISTS peliculas (
+    codigo INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    calificacion_edad INT NOT NULL
+);
