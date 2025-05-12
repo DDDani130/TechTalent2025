@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS tienda_informatica;
+USE tienda_informatica;
+CREATE TABLE IF NOT EXISTS articulos (
+    codigo INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+    precio INT NOT NULL,
+    fabricante INT NOT NULL,
+    FOREIGN KEY (fabricante) REFERENCES fabricantes(codigo)
+);
