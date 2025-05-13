@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS los_investigadores;
+USE los_investigadores;
+CREATE TABLE IF NOT EXISTS reserva (
+    DNI VARCHAR(8) NOT NULL,
+    FOREIGN KEY (DNI) REFERENCES investigadores(DNI),
+    num_serie char(4) NOT NULL,
+    FOREIGN KEY (num_serie) REFERENCES equipos(num_serie),
+    comienzo DATETIME NOT NULL,
+    fin DATETIME NOT NULL
+);

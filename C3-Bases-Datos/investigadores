@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS los_investigadores;
+USE los_investigadores;
+CREATE TABLE IF NOT EXISTS investigadores (
+    DNI VARCHAR(8) PRIMARY KEY,
+    nom_apels VARCHAR(255) NOT NULL,
+    facultad INT NOT NULL,
+    FOREIGN KEY (facultad) REFERENCES facultad(codigo)
+);

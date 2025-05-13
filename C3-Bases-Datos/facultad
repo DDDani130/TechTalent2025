@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS los_investigadores;
+USE los_investigadores;
+CREATE TABLE IF NOT EXISTS facultad (
+    codigo INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
