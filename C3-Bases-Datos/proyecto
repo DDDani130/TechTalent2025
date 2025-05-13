@@ -5,3 +5,24 @@ CREATE TABLE IF NOT EXISTS proyecto (
     nombre varchar(255) NOT NULL,
     horas int NOT NULL
 );
+-- Insertar 10 tuplas válidas en la tabla proyecto
+INSERT INTO proyecto (id, nombre, horas) VALUES
+('P001', 'Proyecto A', 100),
+('P002', 'Proyecto B', 150),
+('P003', 'Proyecto C', 200),
+('P004', 'Proyecto D', 250),
+('P005', 'Proyecto E', 300),
+('P006', 'Proyecto F', 350),
+('P007', 'Proyecto G', 400),
+('P008', 'Proyecto H', 450),
+('P009', 'Proyecto I', 500),
+('P010', 'Proyecto J', 550);
+
+-- Actualizar una tupla (por ejemplo, cambiar las horas del proyecto con id 'P003')
+UPDATE proyecto
+SET horas = 220
+WHERE id = 'P003';
+
+-- Eliminar una tupla (por ejemplo, eliminar el proyecto con id 'P007')
+DELETE FROM proyecto
+WHERE id = 'P007';

@@ -7,3 +7,24 @@ CREATE TABLE IF NOT EXISTS suministra (
     FOREIGN KEY (id_proveedor) REFERENCES proveedores(id),
     precio INT NOT NULL
 );
+-- Insertar 10 tuplas válidas en la tabla suministra
+INSERT INTO suministra (codigo_pieza, id_proveedor, precio) VALUES
+(1, 'P001', 100),
+(2, 'P002', 150),
+(3, 'P003', 200),
+(4, 'P004', 250),
+(5, 'P005', 300),
+(6, 'P006', 350),
+(7, 'P008', 400),
+(8, 'P009', 450),
+(9, 'P010', 500),
+(10, 'P001', 550);
+
+-- Actualizar una tupla (por ejemplo, cambiar el precio de la pieza con código 3 suministrada por 'P003')
+UPDATE suministra
+SET precio = 220
+WHERE codigo_pieza = 3 AND id_proveedor = 'P003';
+
+-- Eliminar una tupla (por ejemplo, eliminar el suministro de la pieza con código 7 por el proveedor 'P008')
+DELETE FROM suministra
+WHERE codigo_pieza = 7 AND id_proveedor = 'P008';

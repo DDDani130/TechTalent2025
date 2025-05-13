@@ -4,3 +4,24 @@ CREATE TABLE IF NOT EXISTS cientificos (
     DNI VARCHAR(8) PRIMARY KEY,
     nom_apels VARCHAR(255) NOT NULL
 );
+-- Insertar 10 tuplas válidas en la tabla cientificos
+INSERT INTO cientificos (DNI, nom_apels) VALUES
+('12345678', 'Juan Pérez'),
+('23456789', 'Ana López'),
+('34567890', 'Carlos García'),
+('45678901', 'María Fernández'),
+('56789012', 'Luis Martínez'),
+('67890123', 'Elena Gómez'),
+('78901234', 'Pedro Sánchez'),
+('89012345', 'Lucía Torres'),
+('90123456', 'Jorge Ruiz'),
+('01234567', 'Marta Díaz');
+
+-- Actualizar una tupla (por ejemplo, cambiar el nombre del científico con DNI '34567890')
+UPDATE cientificos
+SET nom_apels = 'Carlos García Actualizado'
+WHERE DNI = '34567890';
+
+-- Eliminar una tupla (por ejemplo, eliminar al científico con DNI '78901234')
+DELETE FROM cientificos
+WHERE DNI = '78901234';

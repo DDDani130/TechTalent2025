@@ -4,3 +4,23 @@ CREATE TABLE IF NOT EXISTS proveedores (
     id char(4) PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
 );
+INSERT INTO proveedores (id, nombre) VALUES
+('P001', 'Proveedor A'),
+('P002', 'Proveedor B'),
+('P003', 'Proveedor C'),
+('P004', 'Proveedor D'),
+('P005', 'Proveedor E'),
+('P006', 'Proveedor F'),
+('P007', 'Proveedor G'),
+('P008', 'Proveedor H'),
+('P009', 'Proveedor I'),
+('P010', 'Proveedor J');
+
+-- Actualizar una tupla (por ejemplo, cambiar el nombre del proveedor con id 'P003')
+UPDATE proveedores
+SET nombre = 'Proveedor C Actualizado'
+WHERE id = 'P003';
+
+-- Eliminar una tupla (por ejemplo, eliminar el proveedor con id 'P007')
+DELETE FROM proveedores
+WHERE id = 'P007';

@@ -4,3 +4,23 @@ CREATE TABLE IF NOT EXISTS piezas (
     codigo INT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
 );
+INSERT INTO piezas (codigo, nombre) VALUES
+(1, 'Tornillo'),
+(2, 'Tuerca'),
+(3, 'Arandela'),
+(4, 'Clavo'),
+(5, 'Perno'),
+(6, 'Remache'),
+(7, 'Bisagra'),
+(8, 'Engranaje'),
+(9, 'Resorte'),
+(10, 'Rodamiento');
+
+-- Actualizar una tupla (por ejemplo, cambiar el nombre de la pieza con código 3)
+UPDATE piezas
+SET nombre = 'Arandela Plana'
+WHERE codigo = 3;
+
+-- Eliminar una tupla (por ejemplo, eliminar la pieza con código 7)
+DELETE FROM piezas
+WHERE codigo = 7;

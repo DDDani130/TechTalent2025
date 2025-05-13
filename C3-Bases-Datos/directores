@@ -8,3 +8,21 @@ CREATE TABLE IF NOT EXISTS directores (
     despacho INT NOT NULL,
     FOREIGN KEY (despacho) REFERENCES despachos(numero)
 );
+INSERT INTO directores (DNI, nom_apels, DNI_jefe, despacho) VALUES
+('12345678', 'Juan Pérez', NULL, 1),
+('23456789', 'Ana López', '12345678', 2),
+('34567890', 'Carlos García', '12345678', 3),
+('45678901', 'María Fernández', '23456789', 4),
+('56789012', 'Luis Martínez', '23456789', 5),
+('67890123', 'Elena Gómez', '34567890', 6),
+('78901234', 'Pedro Sánchez', '34567890', 7),
+('89012345', 'Lucía Torres', '45678901', 8),
+('90123456', 'Jorge Ruiz', '45678901', 9),
+('01234567', 'Marta Díaz', '56789012', 10);
+
+UPDATE directores
+SET DNI_jefe = '23456789'
+WHERE DNI = '34567890';
+
+DELETE FROM directores
+WHERE DNI = '78901234';

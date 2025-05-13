@@ -4,3 +4,20 @@ CREATE TABLE IF NOT EXISTS despachos (
     numero INT PRIMARY KEY,
     capacidad INT NOT NULL
 );
+INSERT INTO despachos (numero, capacidad) VALUES
+(1, 10),
+(2, 15),
+(3, 20),
+(4, 25),
+(5, 30),
+(6, 35),
+(7, 40),
+(8, 45),
+(9, 50),
+(10, 55);
+
+UPDATE despachos
+SET capacidad = 22
+WHERE numero = 3;
+DELETE FROM despachos
+WHERE numero = 7;
