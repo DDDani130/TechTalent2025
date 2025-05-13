@@ -8,5 +8,6 @@ CREATE TABLE IF NOT EXISTS cursos (
     fecha_fin DATE NOT NULL,
     num_horas INT NOT NULL,
     DNI_profesor VARCHAR(9) NOT NULL,
-    FOREIGN KEY (DNI_profesor) REFERENCES profesores(DNI)
+    FOREIGN KEY (DNI_profesor) REFERENCES profesores(DNI),
+    CHECK (fecha_inicio < fecha_fin)
 );
