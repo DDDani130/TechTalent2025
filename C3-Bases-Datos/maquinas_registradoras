@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS los_grandes_almacenes;
+USE los_grandes_almacenes;
+CREATE TABLE IF NOT EXISTS maquinas_registradoras (
+    codigo INT PRIMARY KEY,
+    piso INT NOT NULL
+);

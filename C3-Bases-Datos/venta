@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS los_grandes_almacenes;
+USE los_grandes_almacenes;
+CREATE TABLE IF NOT EXISTS venta (
+    cajero INT NOT NULL,
+    FOREIGN KEY (cajero) REFERENCES cajeros(codigo),
+    maquina INT NOT NULL,
+    FOREIGN KEY (maquina) REFERENCES maquinas_registradoras(codigo),
+    producto INT NOT NULL,
+    FOREIGN KEY (producto) REFERENCES productos(codigo)
+);
