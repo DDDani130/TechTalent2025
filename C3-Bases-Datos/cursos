@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS  academia_idiomas;
+USE  academia_idiomas;
+CREATE TABLE IF NOT EXISTS cursos (
+    codigo_curso INT PRIMARY KEY,
+    nombre_curso VARCHAR(60) NOT NULL,
+    maximo_alumnos INT NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE NOT NULL,
+    num_horas INT NOT NULL,
+    DNI_profesor VARCHAR(9) NOT NULL,
+    FOREIGN KEY (DNI_profesor) REFERENCES profesores(DNI)
+);
