@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS los_cientificos;
+USE los_cientificos;
+CREATE TABLE IF NOT EXISTS asignado_a (
+    cientifico VARCHAR(8) NOT NULL,
+    FOREIGN KEY (cientifico) REFERENCES cientificos(DNI),
+    proyecto CHAR(4) NOT NULL,
+    FOREIGN KEY (proyecto) REFERENCES proyecto(id)
+);

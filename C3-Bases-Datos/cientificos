@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS los_cientificos;
+USE los_cientificos;
+CREATE TABLE IF NOT EXISTS cientificos (
+    DNI VARCHAR(8) PRIMARY KEY,
+    nom_apels VARCHAR(255) NOT NULL
+);
