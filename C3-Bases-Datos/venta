@@ -8,3 +8,21 @@ CREATE TABLE IF NOT EXISTS venta (
     producto INT NOT NULL,
     FOREIGN KEY (producto) REFERENCES productos(codigo)
 );
+INSERT INTO venta (cajero, maquina, producto) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 3),
+(4, 4, 4),
+(5, 5, 5),
+(6, 6, 6),
+(8, 8, 8),
+(9, 9, 9),
+(10, 10, 10),
+(1, 2, 4);
+
+UPDATE venta
+SET producto = 5
+WHERE cajero = 3 AND maquina = 3;
+
+DELETE FROM venta
+WHERE cajero = 8 AND maquina = 8;

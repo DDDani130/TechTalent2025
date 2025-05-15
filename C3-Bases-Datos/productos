@@ -5,3 +5,21 @@ CREATE TABLE IF NOT EXISTS productos (
     nombre VARCHAR(100) NOT NULL,
     precio INT NOT NULL
 );
+INSERT INTO productos (codigo, nombre, precio) VALUES
+(1, 'Televisor', 500),
+(2, 'Lavadora', 300),
+(3, 'Refrigerador', 700),
+(4, 'Microondas', 150),
+(5, 'Aspiradora', 120),
+(6, 'Plancha', 50),
+(7, 'Cafetera', 80),
+(8, 'Licuadora', 90),
+(9, 'Horno', 200),
+(10, 'Ventilador', 60);
+
+UPDATE productos
+SET precio = 750
+WHERE codigo = 3;
+
+DELETE FROM productos
+WHERE codigo = 7;
