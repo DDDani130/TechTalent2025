@@ -4,3 +4,21 @@ CREATE TABLE IF NOT EXISTS facultad (
     codigo INT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
 );
+INSERT INTO facultad (codigo, nombre) VALUES
+(1, 'Facultad de Ciencias'),
+(2, 'Facultad de Ingeniería'),
+(3, 'Facultad de Medicina'),
+(4, 'Facultad de Derecho'),
+(5, 'Facultad de Economía'),
+(6, 'Facultad de Psicología'),
+(7, 'Facultad de Educación'),
+(8, 'Facultad de Arquitectura'),
+(9, 'Facultad de Filosofía'),
+(10, 'Facultad de Artes');
+
+UPDATE facultad
+SET nombre = 'Facultad de Ciencias de la Salud'
+WHERE codigo = 3;
+
+DELETE FROM facultad
+WHERE codigo = 7;

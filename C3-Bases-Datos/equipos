@@ -6,3 +6,21 @@ CREATE TABLE IF NOT EXISTS equipos (
     facultad INT NOT NULL,
     FOREIGN KEY (facultad) REFERENCES facultad(codigo)
 );
+INSERT INTO equipos (num_serie, nombre, facultad) VALUES
+('E001', 'Microscopio', 1),
+('E002', 'Centrífuga', 2),
+('E003', 'Espectrómetro', 3),
+('E004', 'Termociclador', 4),
+('E005', 'Balanza', 5),
+('E006', 'Incubadora', 6),
+('E007', 'Autoclave', 7),
+('E008', 'Cámara Climática', 8),
+('E009', 'Agitador', 9),
+('E010', 'Congelador', 10);
+
+UPDATE equipos
+SET nombre = 'Espectrómetro de Masas'
+WHERE num_serie = 'E003';
+
+DELETE FROM equipos
+WHERE num_serie = 'E007';
