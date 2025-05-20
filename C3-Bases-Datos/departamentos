@@ -5,3 +5,14 @@ CREATE TABLE IF NOT EXISTS departamentos (
     nombre VARCHAR(100) NOT NULL,
     presupuesto INT NOT NULL
 );
+INSERT INTO departamentos (codigo, nombre, presupuesto) VALUES
+(1, 'Recursos Humanos', 50000),
+(2, 'Contabilidad', 40000),
+(3, 'Marketing', 60000),
+(4, 'Ventas', 70000),
+(5, 'IT', 120000),
+(6, 'I+D', 150000),
+(7, 'Producción', 100000),
+(8, 'Logística', 55000),
+(9, 'Atención al Cliente', 45000),
+(10, 'Dirección', 200000);

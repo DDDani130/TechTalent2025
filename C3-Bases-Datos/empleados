@@ -7,3 +7,71 @@ CREATE TABLE IF NOT EXISTS empleados (
     departamento INT NOT NULL,
     FOREIGN KEY (departamento) REFERENCES departamentos(codigo)
 );
+INSERT INTO empleados (DNI, nombre, apellidos, departamento) VALUES
+('12345678', 'Luis', 'García Pérez', 1),
+('23456789', 'Marta', 'López Díaz', 2),
+('34567890', 'Ana', 'Martínez Ruiz', 3),
+('45678901', 'Carlos', 'Sánchez Gómez', 4),
+('56789012', 'Elena', 'Hernández Ramírez', 5),
+('67890123', 'Pedro', 'Jiménez Torres', 6),
+('78901234', 'Lucía', 'Moreno Vargas', 7),
+('89012345', 'Jorge', 'Romero Castro', 8),
+('90123456', 'Isabel', 'Navarro León', 9),
+('01234567', 'Raúl', 'Domínguez López', 10);
+
+1.  SELECT apellidos FROM empleados;
+
+2.  SELECT DISTINCT apellidos FROM empleados;
+
+3.  SELECT apellidos FROM empleados WHERE apellidos = 'López';
+
+    SELECT apellidos FROM empleados WHERE apellidos IN ('López', 'Pérez');
+
+5.  SELECT nombre, apellidos, DNI FROM empleados WHERE departamento = 14;
+
+6.  SELECT nombre, apellidos, DNI FROM empleados WHERE departamento IN (37, 77);
+
+7.  SELECT apellidos FROM empleados WHERE apellidos LIKE 'P%';
+
+8.  SELECT SUM(presupuesto) AS TOTAL FROM departamentos;
+
+9.  SELECT COUNT(nombre) FROM empleados;
+
+10. SELECT nombre, apellidos, DNI, departamento FROM empleados;
+
+11. SELECT e.nombre AS 'Nombre', e.apellidos AS 'Apellidos',
+           d.nombre AS 'Departamento', d.presupuesto AS 'Presupuesto'
+    FROM empleados e
+    INNER JOIN departamentos d ON e.departamento = d.codigo;
+
+12. SELECT e.nombre AS 'Nombre', e.apellidos AS 'Apellidos', d.presupuesto AS 'Presupuesto'
+    FROM empleados e
+    INNER JOIN departamentos d ON e.departamento = d.codigo
+    WHERE d.presupuesto > 60000;
+
+13. SELECT MAX(presupuesto) FROM departamentos;
+
+14. SELECT d.nombre AS 'Departamentos con más de dos empleados'
+    FROM departamentos d
+    INNER JOIN empleados e ON e.departamento = d.codigo
+    GROUP BY d.nombre
+    HAVING COUNT(e.departamento) > 2;
+
+15. INSERT INTO departamentos (codigo, nombre, presupuesto) VALUES
+    (11, 'Calidad', 33333);
+    INSERT INTO empleados (DNI, nombre, apellidos, departamento) VALUES
+    ('72728421', 'Juan', 'Rodriguez', 11);
+
+16. SELECT presupuesto * 0.90 AS RECORTE FROM departamentos;
+
+17. UPDATE empleados SET departamento = 14
+    WHERE departamento = 77;
+
+    DELETE FROM empleados WHERE departamento = 14;
+
+19. DELETE FROM empleados
+    WHERE departamento IN (
+        SELECT codigo FROM departamentos WHERE presupuesto > 60000
+    );
+
+20. DELETE FROM empleados;
