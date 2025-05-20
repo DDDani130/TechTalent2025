@@ -7,3 +7,49 @@ CREATE TABLE IF NOT EXISTS articulos (
     fabricante INT NOT NULL,
     FOREIGN KEY (fabricante) REFERENCES fabricantes(codigo)
 );
+INSERT INTO articulos (codigo, nombre, precio, fabricante) VALUES
+(101, 'Portátil ZenBook', 1200, 1),
+(102, 'Monitor 27"', 300, 9),
+(103, 'Teclado Mecánico', 100, 10),
+(104, 'Raton Gaming', 60, 10),
+(105, 'Placa Base Z490', 250, 8),
+(106, 'Disco SSD 1TB', 150, 9),
+(107, 'Impresora Láser', 200, 2),
+(108, 'All-in-One', 950, 4),
+(109, 'MacBook Pro', 1800, 7),
+(110, 'Torre Gaming', 1300, 5);
+
+SELECT nombre FROM fabricantes;
+SELECT nombre, precio FROM articulos;
+SELECT precio FROM articulos WHERE precio <= 200;
+SELECT precio FROM articulos WHERE precio BETWEEN 60 AND 120;
+SELECT precio * 166 FROM articulos;
+SELECT AVG(precio) AS promedio_precio FROM articulos;
+SELECT AVG(precio) AS promedio_precio FROM articulos WHERE fabricante = 2;
+SELECT precio FROM articulos WHERE precio >= 180;
+SELECT precio FROM articulos WHERE precio >= 180 ORDER BY precio ASC, nombre ASC;
+SELECT * FROM articulos;
+SELECT articulos.nombre, articulos.precio, fabricantes.nombre AS fabricante_nombre
+FROM articulos
+JOIN fabricantes ON articulos.fabricante = fabricantes.codigo;
+SELECT AVG(precio), fabricante FROM articulos GROUP BY fabricante;
+SELECT AVG(precio) AS 'Precio medio', f.nombre AS 'Fabricante'
+FROM articulos a
+INNER JOIN fabricantes f ON a.fabricante = f.codigo
+GROUP BY fabricante;
+SELECT f.nombre AS 'Fabricante', AVG(precio) AS 'Precio medio'
+FROM articulos a
+INNER JOIN fabricantes f ON a.fabricante = f.codigo
+WHERE precio >= 150
+GROUP BY fabricante;
+SELECT MIN(precio) FROM articulos;
+SELECT nombre AS 'Artículo muy caro', MAX(precio) AS 'Precio'
+FROM articulos
+GROUP BY fabricante;
+INSERT INTO articulos (codigo, nombre, precio, fabricante)
+VALUES (111, 'Altavoces', 70, 2);
+UPDATE articulos
+SET nombre = 'Impresora'
+WHERE codigo = 108;
+SELECT precio * 0.90 AS precioReducido FROM articulos;
+SELECT precio * 0.90 FROM articulos WHERE precio >= 120;
