@@ -19,59 +19,58 @@ INSERT INTO empleados (DNI, nombre, apellidos, departamento) VALUES
 ('90123456', 'Isabel', 'Navarro León', 9),
 ('01234567', 'Raúl', 'Domínguez López', 10);
 
-1.  SELECT apellidos FROM empleados;
+  SELECT apellidos FROM empleados;
 
-2.  SELECT DISTINCT apellidos FROM empleados;
+  SELECT DISTINCT apellidos FROM empleados;
 
-3.  SELECT apellidos FROM empleados WHERE apellidos = 'López';
+  SELECT apellidos FROM empleados WHERE apellidos = 'López Díaz';
 
-    SELECT apellidos FROM empleados WHERE apellidos IN ('López', 'Pérez');
+    SELECT apellidos FROM empleados WHERE apellidos IN ('López Díaz', 'García Pérez');
 
-5.  SELECT nombre, apellidos, DNI FROM empleados WHERE departamento = 14;
+  SELECT nombre, apellidos, DNI FROM empleados WHERE departamento = 14;
 
-6.  SELECT nombre, apellidos, DNI FROM empleados WHERE departamento IN (37, 77);
+  SELECT nombre, apellidos, DNI FROM empleados WHERE departamento IN (37, 77);
 
-7.  SELECT apellidos FROM empleados WHERE apellidos LIKE 'P%';
+  SELECT apellidos FROM empleados WHERE apellidos LIKE 'P%';
 
-8.  SELECT SUM(presupuesto) AS TOTAL FROM departamentos;
+  SELECT SUM(presupuesto) AS TOTAL FROM departamentos;
 
-9.  SELECT COUNT(nombre) FROM empleados;
+  SELECT COUNT(nombre) FROM empleados;
 
-10. SELECT nombre, apellidos, DNI, departamento FROM empleados;
-
-11. SELECT e.nombre AS 'Nombre', e.apellidos AS 'Apellidos',
+ SELECT nombre, apellidos, DNI, departamento FROM empleados;
+ SELECT e.nombre AS 'Nombre', e.apellidos AS 'Apellidos',
            d.nombre AS 'Departamento', d.presupuesto AS 'Presupuesto'
     FROM empleados e
     INNER JOIN departamentos d ON e.departamento = d.codigo;
 
-12. SELECT e.nombre AS 'Nombre', e.apellidos AS 'Apellidos', d.presupuesto AS 'Presupuesto'
+ SELECT e.nombre AS 'Nombre', e.apellidos AS 'Apellidos', d.presupuesto AS 'Presupuesto'
     FROM empleados e
     INNER JOIN departamentos d ON e.departamento = d.codigo
     WHERE d.presupuesto > 60000;
 
-13. SELECT MAX(presupuesto) FROM departamentos;
+ SELECT MAX(presupuesto) FROM departamentos;
 
-14. SELECT d.nombre AS 'Departamentos con más de dos empleados'
+ SELECT d.nombre AS 'Departamentos con más de dos empleados'
     FROM departamentos d
     INNER JOIN empleados e ON e.departamento = d.codigo
     GROUP BY d.nombre
     HAVING COUNT(e.departamento) > 2;
 
-15. INSERT INTO departamentos (codigo, nombre, presupuesto) VALUES
+ INSERT INTO departamentos (codigo, nombre, presupuesto) VALUES
     (11, 'Calidad', 33333);
     INSERT INTO empleados (DNI, nombre, apellidos, departamento) VALUES
     ('72728421', 'Juan', 'Rodriguez', 11);
 
-16. SELECT presupuesto * 0.90 AS RECORTE FROM departamentos;
+ SELECT presupuesto * 0.90 AS RECORTE FROM departamentos;
 
-17. UPDATE empleados SET departamento = 14
+ UPDATE empleados SET departamento = 14
     WHERE departamento = 77;
 
     DELETE FROM empleados WHERE departamento = 14;
 
-19. DELETE FROM empleados
+ DELETE FROM empleados
     WHERE departamento IN (
         SELECT codigo FROM departamentos WHERE presupuesto > 60000
     );
 
-20. DELETE FROM empleados;
+ DELETE FROM empleados;

@@ -5,3 +5,100 @@ CREATE TABLE IF NOT EXISTS almacenes (
     lugar VARCHAR(100) NOT NULL,
     capacidad INT NOT NULL
     );
+    INSERT INTO almacenes (codigo, lugar, capacidad) VALUES
+(1, 'Madrid', 100),
+(2, 'Barcelona', 80),
+(3, 'Sevilla', 60),
+(4, 'Valencia', 70),
+(5, 'Bilbao', 90),
+(6, 'Zaragoza', 50),
+(7, 'Málaga', 85),
+(8, 'Alicante', 40),
+(9, 'Granada', 65),
+(10, 'Santander', 75);
+
+-- 1. Mostrar todos los almacenes
+SELECT * FROM almacenes;
+
+-- 2. Mostrar las cajas con valor mayor a 150
+SELECT * FROM cajas WHERE valor > 150;
+
+-- 3. Mostrar solo el contenido de todas las cajas
+SELECT contenido FROM cajas;
+
+-- 4. Valor promedio de todas las cajas
+SELECT AVG(valor) FROM cajas;
+
+-- 5. Valor medio de cajas agrupado por almacén
+SELECT almacen, AVG(valor) AS 'Valor medio' FROM cajas GROUP BY almacen;
+
+-- 6. Almacenes con valor medio de cajas mayor a 150
+SELECT almacen, AVG(valor) 
+FROM cajas 
+GROUP BY almacen 
+HAVING AVG(valor) > 150;
+
+-- 7. Mostrar número de referencia de cajas y el lugar del almacén al que pertenecen
+SELECT cajas.num_referencia, a.lugar 
+FROM cajas 
+INNER JOIN almacenes a ON cajas.almacen = a.codigo;
+
+-- 8. Contar cuántas cajas tiene cada almacén
+SELECT almacen, COUNT(*) AS 'Numero de cajas' 
+FROM cajas 
+GROUP BY almacen;
+
+-- 9. Almacenes donde hay más cajas de las que permite su capacidad
+SELECT a.codigo, a.capacidad, COUNT(c.almacen) AS num_cajas
+FROM almacenes a
+INNER JOIN cajas c ON a.codigo = c.almacen
+GROUP BY a.codigo, a.capacidad
+HAVING COUNT(c.almacen) > a.capacidad;
+
+-- 10. Cajas que están en el almacén ubicado en Cádiz
+SELECT num_referencia 
+FROM cajas 
+WHERE almacen = (
+    SELECT codigo FROM almacenes WHERE lugar = 'Bilbao'
+);
+
+-- 11. Insertar un nuevo almacén
+INSERT INTO almacenes (codigo, lugar, capacidad) 
+VALUES (22, 'Barcelona', 3);
+
+-- 12. Insertar una nueva caja en ese almacén
+INSERT INTO cajas (num_referencia, contenido, valor, almacen) 
+VALUES ('H5RT', 'papel', 200, 22);
+
+-- 13. Mostrar el valor de todas las cajas reducido en un 15%
+SELECT valor * 0.85 AS VALOR_REDUCIDO FROM cajas;
+
+-- 14. Reducir un 20% el valor de las cajas que superan el valor promedio
+UPDATE cajas 
+SET valor = valor * 0.80 
+WHERE valor > (SELECT AVG(valor) FROM cajas);
+
+-- 15. Eliminar cajas cuyo valor sea menor a 100
+DELETE FROM cajas 
+WHERE valor < 100;
+
+-- 16. Eliminar cajas de almacenes que superen su capacidad (versión 1)
+DELETE FROM cajas 
+WHERE almacen IN (
+    SELECT a.codigo
+    FROM almacenes a
+    JOIN cajas c ON a.codigo = c.almacen
+    GROUP BY a.codigo, a.capacidad
+    HAVING COUNT(c.almacen) > a.capacidad
+);
+
+-- 16 (opcional). Versión alternativa de la anterior consulta
+DELETE FROM cajas 
+WHERE almacen IN (
+    SELECT a.codigo
+    FROM almacenes a
+    WHERE a.capacidad < (
+        SELECT COUNT(*) FROM cajas WHERE almacen = a.codigo
+    )
+);
+

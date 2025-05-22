@@ -6,3 +6,60 @@ CREATE TABLE IF NOT EXISTS salas (
     pelicula INT NOT NULL,
     FOREIGN KEY (pelicula) REFERENCES peliculas(codigo)
 );
+
+INSERT INTO salas (codigo, nombre, pelicula) VALUES
+(101, 'Sala 1', 1),
+(102, 'Sala 2', NULL),
+(103, 'Sala 3', 3),
+(104, 'Sala 4', NULL),
+(105, 'Sala 5', 5),
+(106, 'Sala 6', 6),
+(107, 'Sala 7', 7),
+(108, 'Sala 8', 8),
+(109, 'Sala 9', NULL),
+(110, 'Sala 10', 10);
+
+-- 1. Mostrar todos los nombres de películas
+SELECT nombre FROM peliculas;
+
+-- 2. Mostrar todas las calificaciones por edad
+SELECT calificacion_edad FROM peliculas;
+
+-- 3. Películas con calificación nula (por si alguna tuviera)
+SELECT * FROM peliculas WHERE calificacion_edad = 0;
+
+-- 4. Salas sin película asignada (aunque en tu modelo todas deben tener una)
+SELECT * FROM salas WHERE pelicula IS NULL;
+
+-- 5. Información completa combinada de salas y películas (INNER JOIN)
+SELECT s.codigo AS id_sala, s.nombre AS nombre_sala, s.pelicula, 
+       p.nombre AS nombre_pelicula, p.calificacion_edad 
+FROM salas s 
+INNER JOIN peliculas p ON s.pelicula = p.codigo;
+
+-- 6. Información combinada con orden diferente
+SELECT p.nombre AS nombre_pelicula, p.calificacion_edad, 
+       s.codigo AS id_sala, s.nombre AS nombre_sala
+FROM peliculas p 
+INNER JOIN salas s ON p.codigo = s.pelicula;
+
+-- 7. Películas que no están asignadas a ninguna sala (LEFT JOIN + IS NULL)
+SELECT p.nombre 
+FROM peliculas p 
+LEFT JOIN salas s ON p.codigo = s.pelicula 
+WHERE s.pelicula IS NULL;
+
+-- 8. Insertar nueva película
+INSERT INTO peliculas (codigo, nombre, calificacion_edad) 
+VALUES (50, 'Uno, dos, tres', 7);
+
+-- 9. Actualizar calificación si estuviera vacía (precaución: no debería haber nulls)
+UPDATE peliculas 
+SET calificacion_edad = 13 
+WHERE calificacion_edad = 0;
+
+-- 10. Eliminar salas que proyectan películas con calificación para menores
+DELETE FROM salas 
+WHERE pelicula IN (
+    SELECT codigo FROM peliculas WHERE calificacion_edad = 3
+);

@@ -5,3 +5,15 @@ CREATE TABLE IF NOT EXISTS peliculas (
     nombre VARCHAR(100) NOT NULL,
     calificacion_edad INT NOT NULL
 );
+
+INSERT INTO peliculas (codigo, nombre, calificacion_edad) VALUES
+(1, 'Inception', NULL),
+(NULL, 'Toy Story', 3),
+(3, 'The Matrix', NULL),
+(NULL, 'Interstellar', NULL),
+(5, 'Frozen', 3),
+(6, 'Avatar', NULL),
+(7, 'Titanic', NULL),
+(8, 'Joker', NULL),
+(NULL, 'Up', 3),
+(10, 'Gladiator', NULL);
