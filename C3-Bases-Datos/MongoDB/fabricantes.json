@@ -1,0 +1,12 @@
+[
+  { "_id": 1, "nombre": "Asus" },
+  { "_id": 2, "nombre": "HP" },
+  { "_id": 3, "nombre": "Lenovo" },
+  { "_id": 4, "nombre": "Dell" },
+  { "_id": 5, "nombre": "MSI" },
+  { "_id": 6, "nombre": "Acer" },
+  { "_id": 7, "nombre": "Apple" },
+  { "_id": 8, "nombre": "Gigabyte" },
+  { "_id": 9, "nombre": "Samsung" },
+  { "_id": 10, "nombre": "Logitech" }
+]
