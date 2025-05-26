@@ -1,0 +1,27 @@
+// use los_directores;
+
+db.directores.insertMany([
+  { _id: "12345678", nom_apels: "Juan Pérez", DNI_jefe: null, despacho: 1 },
+  { _id: "23456789", nom_apels: "Ana López", DNI_jefe: "12345678", despacho: 2 },
+  { _id: "34567890", nom_apels: "Carlos García", DNI_jefe: "12345678", despacho: 3 },
+  { _id: "45678901", nom_apels: "María Fernández", DNI_jefe: "23456789", despacho: 4 },
+  { _id: "56789012", nom_apels: "Luis Martínez", DNI_jefe: "23456789", despacho: 5 },
+  { _id: "67890123", nom_apels: "Elena Gómez", DNI_jefe: "34567890", despacho: 6 },
+  { _id: "78901234", nom_apels: "Pedro Sánchez", DNI_jefe: "34567890", despacho: 7 },
+  { _id: "89012345", nom_apels: "Lucía Torres", DNI_jefe: "45678901", despacho: 8 },
+  { _id: "90123456", nom_apels: "Jorge Ruiz", DNI_jefe: "45678901", despacho: 9 },
+  { _id: "01234567", nom_apels: "Marta Díaz", DNI_jefe: "56789012", despacho: 10 }
+]);
+
+db.despachos.insertMany([
+  { _id: 1, capacidad: 10 },
+  { _id: 2, capacidad: 15 },
+  { _id: 3, capacidad: 20 },
+  { _id: 4, capacidad: 25 },
+  { _id: 5, capacidad: 30 },
+  { _id: 6, capacidad: 35 },
+  { _id: 7, capacidad: 40 },
+  { _id: 8, capacidad: 45 },
+  { _id: 9, capacidad: 50 },
+  { _id: 10, capacidad: 55 }
+]);

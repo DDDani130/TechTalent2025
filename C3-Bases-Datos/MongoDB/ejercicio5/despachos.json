@@ -1,0 +1,12 @@
+[
+  { "_id": 1, "capacidad": 10 },
+  { "_id": 2, "capacidad": 15 },
+  { "_id": 3, "capacidad": 20 },
+  { "_id": 4, "capacidad": 25 },
+  { "_id": 5, "capacidad": 30 },
+  { "_id": 6, "capacidad": 35 },
+  { "_id": 7, "capacidad": 40 },
+  { "_id": 8, "capacidad": 45 },
+  { "_id": 9, "capacidad": 50 },
+  { "_id": 10, "capacidad": 55 }
+]
