@@ -10,12 +10,8 @@
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
                 
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-                
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
-                
-        <property name="java-output-path" value="/C4-Back/target/classes"/>
-        <property name="context-root" value="C4-UD22-Patron"/>
+        <property name="java-output-path" value="/C4-UD22-Patron/target/classes"/>
+        <property name="context-root" value="C4-Back"/>
             
     </wb-module>
     
